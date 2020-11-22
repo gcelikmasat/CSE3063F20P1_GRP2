@@ -1,0 +1,29 @@
+Super Dataset 
++id int
++name String
++maxNoLabels int
+
+Sub Label
++id int 
++text	String
+
+Sub Instance
++id int 
++instance String
+
+User
++id int 
++name String
++user type String
+
+Label Assignments
++Instance Id int
++Class Label Id int[]
++User id
++Date time
+
+
+Labeling Mechanism ? userdan ayrı class mı yoksa usera bağlı mı?
+Configuration file? -> user bilgileri  
+
+
