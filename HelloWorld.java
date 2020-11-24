@@ -1,3 +1,5 @@
+package CSE3063F20P1_GRP2;
+
 /* This is a simple Java program. 
    FileName : "HelloWorld.java". */
 class HelloWorld 
