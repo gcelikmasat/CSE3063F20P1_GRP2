@@ -1,3 +1,5 @@
+package CSE3063F20P1_GRP2;
+
 /*
  * Reads given input json file
  * 	 
@@ -9,7 +11,7 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Iterator;
+//import java.util.Iterator;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -24,7 +26,7 @@ public class ReadJsonFile {
 		JSONParser parser = new JSONParser();
 		
 		try {
-			Object obj = parser.parse(new FileReader("input.json"));
+			Object obj = parser.parse(new FileReader("CES3063F20_LabelingProject_Input-1.json"));
 			JSONObject jsonObject = (JSONObject) obj;
 			
 			long id = (long)jsonObject .get("dataset id");
