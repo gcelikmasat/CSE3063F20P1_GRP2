@@ -8,4 +8,3 @@ Group 2
 150119825 - Merve Rana Kızıl
 150119824 - Zeynep Ferah Akkurt
 150117905 - Erhan Yalnız
-6
