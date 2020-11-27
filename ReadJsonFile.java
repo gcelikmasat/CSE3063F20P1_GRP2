@@ -62,6 +62,8 @@ public class ReadJsonFile {
 				System.out.println("instance id:  "+ instanceId);
 				System.out.println("instance text: "+ instanceText);
 			}
+
+		System.out.println("Hello");
 			
 		}catch (FileNotFoundException e) {
 			e.printStackTrace();
