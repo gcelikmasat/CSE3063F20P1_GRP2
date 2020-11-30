@@ -1,4 +1,8 @@
-package CSE3063F20P1_GRP2;
+/*
+ * Reads given input json file
+ * 	 
+ * 
+ */
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,7 +18,6 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class ReadJsonFile {
-
 	public Dataset readFileDataset(String fileName) throws FileNotFoundException, IOException, ParseException{
 
 		JSONParser parser = new JSONParser();
@@ -58,10 +61,10 @@ public class ReadJsonFile {
 	}
 
 	//reads users
-	public ArrayList<User> readFileUsers(String fileName) throws FileNotFoundException, IOException, ParseException{
-		boolean append = false;
+	public ArrayList<User> readFileUsers(String fileName,FileHandler fh) throws FileNotFoundException, IOException, ParseException{
+		
         Logger logger = Logger.getLogger("MyLog");  
-		FileHandler fh;
+	
 		Date currentDate = new Date();
 		
 		JSONParser parser = new JSONParser();
@@ -84,7 +87,7 @@ public class ReadJsonFile {
 				try {  
 
 					// This block configure the logger with handler and formatter  
-					fh = new FileHandler("default.log", append);  
+					 
 					logger.addHandler(fh);
 					SimpleFormatter formatter = new SimpleFormatter();  
 					fh.setFormatter(formatter);  
@@ -93,8 +96,6 @@ public class ReadJsonFile {
 					logger.info(currentDate + "[User Manager] INFO user id: " + user.getId() + " created " + user.getName() + " as " + user.getUser_type() + " \n ");
 			
 				} catch (SecurityException e) {  
-					e.printStackTrace();  
-				} catch (IOException e) {  
 					e.printStackTrace();  
 				}  
 
@@ -106,7 +107,7 @@ public class ReadJsonFile {
 				try {  
 
 					// This block configure the logger with handler and formatter  
-					fh = new FileHandler("default.log", append);  
+					fh = new FileHandler("default.log", false);  
 					logger.addHandler(fh);
 					SimpleFormatter formatter = new SimpleFormatter();  
 					fh.setFormatter(formatter);  
