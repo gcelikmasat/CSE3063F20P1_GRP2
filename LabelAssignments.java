@@ -4,18 +4,20 @@ import java.util.Date;
 import java.util.ArrayList;
 
 public class LabelAssignments{
-    private ArrayList<Integer> classLabel;
+    private ArrayList<Label> classLabel;
     private Date date;
     private Instance instance;
     private User user;
 
-    public LabelAssignments(ArrayList<Integer> classLabel, Date date, Instance instance, User user) {
+    public LabelAssignments(Instance instance, User user) {
+    	ArrayList<Label>classLabel=new ArrayList<Label>();
         this.classLabel = classLabel;
+        Date date = new Date(); 
         this.date = date;
         this.instance = instance;
         this.user = user;
     }
-    public void addLabel(Integer m){
+    public void addLabel(Label m){
         this.classLabel.add(m);
     }
 
@@ -35,11 +37,11 @@ public class LabelAssignments{
         this.instance = instance;
     }
 
-    public ArrayList<Integer> getClassLabel() {
+    public ArrayList<Label> getClassLabel() {
         return classLabel;
     }
 
-    public void setClassLabel(ArrayList<Integer> classLabel) {
+    public void setClassLabel(ArrayList<Label> classLabel) {
         this.classLabel = classLabel;
     }
 
