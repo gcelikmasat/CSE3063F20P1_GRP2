@@ -10,94 +10,128 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+
 public class TEST {
 
-    public static void main(String[] args){
-		JSONParser parser = new JSONParser();
-		
-		
-		
-		try {
-			Object obj = parser.parse(new FileReader("CES3063F20_LabelingProject_Input-1.json"));
-			JSONObject jsonObject = (JSONObject) obj;
-			
-			int datasetID = (int)(long)jsonObject .get("dataset id");
-			//System.out.println("dataset id: "+ datasetID);
-			
-			String datasetName = (String)jsonObject.get("dataset name");
-			//System.out.println("dataset name: "+ datasetName);
-			
-			int maxNoLabels = (int)(long)jsonObject.get("maximum number of labels per instance");
-			//System.out.println("maximum number of labels per instance: "+ maxNoLabels);
-			//System.out.println();
-			
-			ArrayList<Label> label_list = new ArrayList<Label>();
-			JSONArray labels = (JSONArray) jsonObject.get("class labels");
-			for(int i=0; i<labels.size(); ++i) {
-				
-				JSONObject labelObject = (JSONObject) labels.get(i);
+	public static void main(String[] args) {
 
-				int labelId = (int)(long)labelObject.get("label id");
-				String labelText = (String)labelObject.get("label text");
+		JSONParser parser = new JSONParser();
+
+		try {
+			Object obj = parser.parse(new FileReader("input2.json"));
+			JSONObject jsonObject = (JSONObject) obj;
+
+			int id = (int) (long) jsonObject.get("dataset id");
+			System.out.println("dataset id: " + id);
+
+			String name = (String) jsonObject.get("dataset name");
+			System.out.println("dataset name: " + name);
+
+			int maxNumber = (int) (long) jsonObject.get("maximum number of labels per instance");
+			System.out.println("maximum number of labels per instance: " + maxNumber);
+
+			System.out.println();
+
+			JSONArray labels = (JSONArray) jsonObject.get("class labels");
+			ArrayList<Label> label_list = new ArrayList<Label>();
+			for (int i = 0; i < labels.size(); ++i) {
+
+				JSONObject labelObject = (JSONObject) labels.get(i);
+				int labelId = (int) (long) labelObject.get("label id");
+				String labelText = (String) labelObject.get("label text");
 
 				Label label = new Label(labelId, labelText);
 				label_list.add(label);
-				//System.out.println("label id: "+ labelId);
-				//System.out.println("label text: "+ labelText);
 			}
 
-			//System.out.println();
-			ArrayList<Instance> instance_list = new ArrayList<Instance>();
+			/*
+			 * for(Label a:label_list) { System.out.println(a.getId()+" "+a.getText()); }
+			 */
+
+			System.out.println();
+
 			JSONArray instances = (JSONArray) jsonObject.get("instances");
-			for(int i=0; i<instances.size(); ++i) {
-				
+			ArrayList<Instance> instance_list = new ArrayList<Instance>();
+			for (int i = 0; i < instances.size(); ++i) {
+
 				JSONObject instanceObject = (JSONObject) instances.get(i);
-				
-				int instanceId = (int)(long)instanceObject.get("id");
-				String instanceText = (String)instanceObject.get("instance");
+				int instanceId = (int) (long) instanceObject.get("id");
+				String instanceText = (String) instanceObject.get("instance");
 
 				Instance instance = new Instance(instanceId, instanceText);
 				instance_list.add(instance);
-				//System.out.println("instance id:  "+ instanceId);
-				//System.out.println("instance text: "+ instanceText);
+
 			}
+			/*
+			 * for(Instance b:instance_list) {
+			 * System.out.println(b.getId()+" "+b.getText()); }
+			 */
 
-			Dataset tDataset = new Dataset(datasetID,datasetName,maxNoLabels, label_list, instance_list);
+			/*
+			 * ArrayList<User> userList = new ArrayList<User>(); User user1 = new
+			 * RandomLabelingMechanism("ali", "random"); userList.add(user1); User user2 =
+			 * new MachineLearning("veli", "random"); userList.add(user2);
+			 */
 
-			tDataset.printDataset();
+			Dataset data = new Dataset(id, name, maxNumber, label_list, instance_list);
 
-			User user1 = new RandomLabelingMechanism("user1", "random");
-			User user2 = new RandomLabelingMechanism("user2", "random");
-			User user3 = new RandomLabelingMechanism("user3", "random");
-			User user4 = new RandomLabelingMechanism("user4", "random");
+			Object obj1 = parser.parse(new FileReader("user.json"));
+			JSONObject jsonObject1 = (JSONObject) obj1;
+			JSONArray users = (JSONArray) jsonObject1.get("users");
+			ArrayList<User> user_list = new ArrayList<User>();
+			for (int i = 0; i < users.size(); ++i) {
 
-			ArrayList<User> users = new ArrayList<User>();
+				JSONObject userObject = (JSONObject) users.get(i);
+				int userId = (int) (long) userObject.get("user id");
+				String userName = (String) userObject.get("user name");
+				String userType = (String) userObject.get("user type");
 
-			ArrayList<LabelAssignments> assignments = new ArrayList<LabelAssignments>();
+				if (userType.equals("RandomBot")) {
+					User user = new RandomLabelingMechanism(userId, userName, userType);
+					user_list.add(user);
 
-			for (int a=0;a< tDataset.getInstances().size();a++){
-				for(int b=0; b<users.size(); b++){
-					LabelAssignments assignment = new LabelAssignments(tDataset.getInstances().get(a), users.get(b));
-					Label label = getRandomLabel(tDataset);
-					users.get(b).label(assignment, label);
+				}
+				else {
+					User user = new OtherMechanisms(userId, userName, userType);
+					user_list.add(user);
+				}
+
+			}
+			ArrayList<LabelAssignments> assignment_list = new ArrayList<LabelAssignments>();
+			for (int a = 0; a < user_list.size(); a++) {
+				for (int b = 0; b < instance_list.size(); b++) {
+					LabelAssignments labelAssignment = new LabelAssignments(instance_list.get(b), user_list.get(a));
+					assignment_list.add(labelAssignment);
+
 				}
 			}
 
-			
-		}catch (FileNotFoundException e) {
+			for (int i = 0; i < assignment_list.size(); i++) {
+				(assignment_list.get(i).getUser()).label(assignment_list.get(i), label_list, maxNumber);
+			}
+
+			/*
+			 * for (int c = 0; c < assignment_list.size(); c++) {
+			 * assignment_list.get(c).getClassLabel().add(label_list.get((int)
+			 * (Math.random() * label_list.size()))); }
+			 * 
+			 * for (LabelAssignments c : assignment_list) {
+			 * System.out.println(c.getClassLabel().get(0).getText() + " - " +
+			 * c.getInstance().getDocument() + " " + c.getUser().getName() + " " +
+			 * c.getDate()); }
+			 */
+			WriteJsonFile a = new WriteJsonFile(data.getId(), data.getName(), data.getMaxNoLabels(), label_list,
+					instance_list, assignment_list, user_list);
+			a.printToFile("output_test.json");
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
 			e.printStackTrace();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-    }
-    }
 
-public Label getRandomLabel(Dataset ds){
-	Label RandomLabel = new Label(1, "S");
-	return RandomLabel;
+	}
 }

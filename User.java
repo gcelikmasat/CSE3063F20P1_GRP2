@@ -1,15 +1,19 @@
 package CSE3063F20P1_GRP2;
 
+import java.util.ArrayList;
+
 abstract class User {
+	private int id;
     private String name;
     private String user_type;
 
-    public User(String name, String user_type) {
+    public User(int id,String name, String user_type) {
+    	this.id=id;
         this.name = name;
         this.user_type = user_type;
     }
 
-    public abstract void label(LabelAssignments la, Label label);
+    abstract void label(LabelAssignments la,ArrayList<Label> l,int max);
 
     public String getName() {
         return name;
@@ -31,5 +35,15 @@ abstract class User {
     public String toString() {
         return "User [name=" + name + ", user_type=" + user_type + "]";
     }
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	
     
 }

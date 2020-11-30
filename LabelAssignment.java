@@ -1,7 +1,6 @@
 package CSE3063F20P1_GRP2;
 
 import java.util.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class LabelAssignments{
@@ -11,14 +10,13 @@ public class LabelAssignments{
     private User user;
 
     public LabelAssignments(Instance instance, User user) {
-        Date date = new Date();
-        this.date = date;
-        ArrayList<Label> classLabel = new ArrayList<>();
+    	ArrayList<Label>classLabel=new ArrayList<Label>();
         this.classLabel = classLabel;
+        Date date = new Date(); 
+        this.date = date;
         this.instance = instance;
         this.user = user;
     }
-
     public void addLabel(Label m){
         this.classLabel.add(m);
     }
