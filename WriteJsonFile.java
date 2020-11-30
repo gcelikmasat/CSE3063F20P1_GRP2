@@ -15,13 +15,13 @@ public class WriteJsonFile {
 	private int maxNoLabels;
 	private ArrayList<Label> label_list;
 	private ArrayList<Instance> instance_list;
-	private ArrayList<LabelAssignments> assignment_list;
+	private ArrayList<LabelAssignment> assignment_list;
 	private ArrayList<User> user_list;
 
 	@SuppressWarnings("unchecked")
 
 	public WriteJsonFile(int datasetID, String datasetName, int maxNoLabels, ArrayList<Label> label_list,
-			ArrayList<Instance> instance_list, ArrayList<LabelAssignments> assignment_list, ArrayList<User> user_list) {
+			ArrayList<Instance> instance_list, ArrayList<LabelAssignment> assignment_list, ArrayList<User> user_list) {
 		this.datasetID = datasetID;
 		this.datasetName = datasetName;
 		this.maxNoLabels = maxNoLabels;
@@ -58,16 +58,16 @@ public class WriteJsonFile {
 		dataset.put("instances", instances);
 
 		JSONArray class_label_assignments = new JSONArray();
-		for (LabelAssignments labelAssignments : assignment_list) {
+		for (LabelAssignment labelAssignment : assignment_list) {
 			JSONObject assignment_object = new JSONObject();
-			assignment_object.put("instance id", labelAssignments.getInstance().getId());
+			assignment_object.put("instance id", labelAssignment.getInstance().getId());
 			JSONArray class_label_ids = new JSONArray();
-			for (Label label : labelAssignments.getClassLabel()) {
+			for (Label label : labelAssignment.getClassLabel()) {
 				class_label_ids.add(label.getId());
 			}
 			assignment_object.put("class label ids", class_label_ids);
-			assignment_object.put("user id", labelAssignments.getUser().getId());
-			assignment_object.put("datetime", labelAssignments.getDate().toString());
+			assignment_object.put("user id", labelAssignment.getUser().getId());
+			assignment_object.put("datetime", labelAssignment.getDate().toString());
 			class_label_assignments.add(assignment_object);
 		}
 		dataset.put("class label assignments", class_label_assignments);

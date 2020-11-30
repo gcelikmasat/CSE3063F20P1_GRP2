@@ -3,13 +3,13 @@ package CSE3063F20P1_GRP2;
 import java.util.Date;
 import java.util.ArrayList;
 
-public class LabelAssignments{
+public class LabelAssignment{
     private ArrayList<Label> classLabel;
     private Date date;
     private Instance instance;
     private User user;
 
-    public LabelAssignments(Instance instance, User user) {
+    public LabelAssignment(Instance instance, User user) {
     	ArrayList<Label>classLabel=new ArrayList<Label>();
         this.classLabel = classLabel;
         Date date = new Date(); 

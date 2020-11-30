@@ -12,7 +12,7 @@ public class RandomLabelingMechanism extends User {
 	}
 
 	@Override
-	public void label(LabelAssignments la, ArrayList<Label> l, int max) {
+	public void label(LabelAssignment la, ArrayList<Label> l, int max) {
         Date currentDate = new Date();
         la.setDate(currentDate);
 		int times = (int) (Math.random() * max)+1;

@@ -92,15 +92,15 @@ public class TEST {
 
 				}
 				else {
-					User user = new OtherMechanisms(userId, userName, userType);
+					User user = new OtherMechanism(userId, userName, userType);
 					user_list.add(user);
 				}
 
 			}
-			ArrayList<LabelAssignments> assignment_list = new ArrayList<LabelAssignments>();
+			ArrayList<LabelAssignment> assignment_list = new ArrayList<LabelAssignment>();
 			for (int a = 0; a < user_list.size(); a++) {
 				for (int b = 0; b < instance_list.size(); b++) {
-					LabelAssignments labelAssignment = new LabelAssignments(instance_list.get(b), user_list.get(a));
+					LabelAssignment labelAssignment = new LabelAssignment(instance_list.get(b), user_list.get(a));
 					assignment_list.add(labelAssignment);
 
 				}
