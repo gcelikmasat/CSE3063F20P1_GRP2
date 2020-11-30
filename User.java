@@ -1,6 +1,7 @@
 package CSE3063F20P1_GRP2;
 
 import java.util.ArrayList;
+import java.util.logging.FileHandler;
 
 abstract class User {
 	private int id;
