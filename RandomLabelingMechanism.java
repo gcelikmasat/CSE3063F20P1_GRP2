@@ -1,4 +1,4 @@
-package CSE3063F20P1_GRP2;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,15 +9,15 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-
 public class RandomLabelingMechanism extends User {
 
+	
 	public RandomLabelingMechanism(int id, String name, String user_type) {
 		super(id, name, user_type);
 	}
 
 	@Override
-	public void label(LabelAssignment la, ArrayList<Label> l, int max){
+	public void label(LabelAssignment la, ArrayList<Label> l, int max,FileHandler fh){
         
         Date currentDate = new Date();
         la.setDate(currentDate);
@@ -42,14 +42,12 @@ public class RandomLabelingMechanism extends User {
 		System.out.print(" user id: " + la.getUser().getId());
         System.out.println(" date: " + la.getDate());
 
-        boolean append = false;
+      
         Logger logger = Logger.getLogger("MyLog");  
-        FileHandler fh;
 
         try {  
 
-            // This block configure the logger with handler and formatter  
-            fh = new FileHandler("default.log", append);  
+            // This block configure the logger with handler and formatter   
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();  
             fh.setFormatter(formatter);  
@@ -65,10 +63,9 @@ public class RandomLabelingMechanism extends User {
     
         } catch (SecurityException e) {  
             e.printStackTrace();  
-        } catch (IOException e) {  
-            e.printStackTrace();  
         }  
 
         logger.setUseParentHandlers(false);
+       
 	}
 }
