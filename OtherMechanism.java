@@ -9,6 +9,6 @@ public class OtherMechanism extends User {
 	}
 
 	@Override
-	public void label(LabelAssignment la, ArrayList<Label> l,int max) {
+	public void label(LabelAssignment la, ArrayList<Label> l,int max,FileHandler fh) {
 	}
 }
