@@ -1,9 +1,3 @@
-/*
- * Reads given input json file
- * 	 
- * 
- */
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
