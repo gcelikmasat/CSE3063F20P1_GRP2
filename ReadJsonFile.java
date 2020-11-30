@@ -1,17 +1,17 @@
-/*
- * Reads given input json file
- * 	 
- * 
- */
+package CSE3063F20P1_GRP2;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Date;
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class ReadJsonFile {
 
@@ -59,6 +59,10 @@ public class ReadJsonFile {
 
 	//reads users
 	public ArrayList<User> readFileUsers(String fileName) throws FileNotFoundException, IOException, ParseException{
+		boolean append = false;
+        Logger logger = Logger.getLogger("MyLog");  
+		FileHandler fh;
+		Date currentDate = new Date();
 		
 		JSONParser parser = new JSONParser();
 		Object obj1 = parser.parse(new FileReader(fileName));
@@ -77,11 +81,46 @@ public class ReadJsonFile {
 				User user = new RandomLabelingMechanism(userId, userName, userType);
 				user_list.add(user);
 
+				try {  
+
+					// This block configure the logger with handler and formatter  
+					fh = new FileHandler("default.log", append);  
+					logger.addHandler(fh);
+					SimpleFormatter formatter = new SimpleFormatter();  
+					fh.setFormatter(formatter);  
+			
+					// the following statement is used to log any messages  
+					logger.info(currentDate + "[User Manager] INFO user id: " + user.getId() + " created " + user.getName() + " as " + user.getUser_type() + " \n ");
+			
+				} catch (SecurityException e) {  
+					e.printStackTrace();  
+				} catch (IOException e) {  
+					e.printStackTrace();  
+				}  
+
 			}
-			if (userType.equals("MachineLearningBot")) {
+			else {
 				User user = new OtherMechanism(userId, userName, userType);
 				user_list.add(user);
+
+				try {  
+
+					// This block configure the logger with handler and formatter  
+					fh = new FileHandler("default.log", append);  
+					logger.addHandler(fh);
+					SimpleFormatter formatter = new SimpleFormatter();  
+					fh.setFormatter(formatter);  
+			
+					// the following statement is used to log any messages  
+					logger.info(currentDate + "[User Manager] INFO user id: " + user.getId() + " created " + user.getName() + " as " + user.getUser_type() + " \n ");
+			
+				} catch (SecurityException e) {  
+					e.printStackTrace();  
+				} catch (IOException e) {  
+					e.printStackTrace();  
+				}
 			}
+			logger.setUseParentHandlers(false);
 
 		}
 		return user_list;

@@ -10,7 +10,5 @@ public class OtherMechanism extends User {
 
 	@Override
 	public void label(LabelAssignment la, ArrayList<Label> l,int max) {
-		System.out.println("Other Mechanisms. ");
-
 	}
 }

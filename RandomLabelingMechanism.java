@@ -1,8 +1,13 @@
 package CSE3063F20P1_GRP2;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
+
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 
 public class RandomLabelingMechanism extends User {
@@ -12,7 +17,8 @@ public class RandomLabelingMechanism extends User {
 	}
 
 	@Override
-	public void label(LabelAssignment la, ArrayList<Label> l, int max) {
+	public void label(LabelAssignment la, ArrayList<Label> l, int max){
+        
         Date currentDate = new Date();
         la.setDate(currentDate);
 		int times = (int) (Math.random() * max)+1;
@@ -24,7 +30,7 @@ public class RandomLabelingMechanism extends User {
 			la.getClassLabel().add(clone.get(random));
 			clone.remove(random);
 		}
-		System.out.print("instance id: " + la.getInstance().getId());
+        System.out.print("instance id: " + la.getInstance().getId());
 		
 		(la.getClassLabel()).sort(Comparator.comparing(Label::getId));
 		
@@ -34,6 +40,35 @@ public class RandomLabelingMechanism extends User {
 		}
 
 		System.out.print(" user id: " + la.getUser().getId());
-		System.out.println(" date: " + la.getDate());
+        System.out.println(" date: " + la.getDate());
+
+        boolean append = false;
+        Logger logger = Logger.getLogger("MyLog");  
+        FileHandler fh;
+
+        try {  
+
+            // This block configure the logger with handler and formatter  
+            fh = new FileHandler("default.log", append);  
+            logger.addHandler(fh);
+            SimpleFormatter formatter = new SimpleFormatter();  
+            fh.setFormatter(formatter);  
+    
+            // the following statement is used to log any messages  
+            logger.info(currentDate + "[Instance tagger] INFO user id: " + la.getUser().getId() + " " + la.getUser().getName() + " tagged instance id: " + la.getInstance().getId() + " with class label: ");
+
+        for(int i=0;i< times;i++){
+            logger.info(la.getClassLabel().get(i).getId() + " " + la.getClassLabel().get(i).getText() );
+        }
+
+        logger.info("\n"); 
+    
+        } catch (SecurityException e) {  
+            e.printStackTrace();  
+        } catch (IOException e) {  
+            e.printStackTrace();  
+        }  
+
+        logger.setUseParentHandlers(false);
 	}
 }
