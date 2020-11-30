@@ -3,9 +3,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.FileHandler;
 
+import org.json.simple.parser.ParseException;
+
 public class LabelSystem{
-	
+
+	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+		// TODO Auto-generated method stub
+
 		ReadJsonFile readFile = new ReadJsonFile();
+
 		Dataset data = readFile.readFileDataset("input.json");
 	
 		FileHandler fh = new FileHandler("default.log",false); 
