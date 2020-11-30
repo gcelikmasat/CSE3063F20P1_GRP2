@@ -13,7 +13,7 @@ abstract class User {
         this.user_type = user_type;
     }
 
-    abstract void label(LabelAssignment la,ArrayList<Label> l,int max);
+    abstract void label(LabelAssignment la,ArrayList<Label> l,int max,FileHandler fh);
 
     public String getName() {
         return name;
