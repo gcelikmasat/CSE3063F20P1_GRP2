@@ -1,29 +1,57 @@
-Super Dataset 
+Dataset 
 +id int
 +name String
 +maxNoLabels int
++label list ArrayList<Label>
++instance_list ArrayList<Instance>
 
-Sub Label
+Label
 +id int 
-+text	String
++text String
 
-Sub Instance
+Instance
 +id int 
 +instance String
 
+//Abstract class
 User
 +id int 
 +name String
 +user type String
++ abstract label()
 
 Label Assignments
-+Instance Id int
 +Class Label Id int[]
-+User id
 +Date time
++Instance instance
++User user
 
 
-Labeling Mechanism ? userdan ayrý class mý yoksa usera baðlý mý?
-Configuration file? -> user bilgileri  
+Random Labeling Mechanism
++abstract label()
 
+
+Labeling Mechanism ? 
+Configuration file? -> user bilgileri 
+
+Again, one user will label an instance, and after that another user will take turn and 
+label an instance. A user will label all the instances in the input dataset one by one. I need to see 
+they are labeling instances one by one from your execution trace on command line window and also from the 
+log file which will be open during your demo. The users will take turn. After one user labels an instance you 
+must to switch to another user. Of course all these can be done by loops. You need to loop through instances and 
+you need to loop through users. Keep it simple!
+
+ your users are random bots which will select a label randomly
+
+
+  Box(Box ob) 
+    { 
+        width = ob.width; 
+        height = ob.height; 
+        depth = ob.depth; 
+    } 
+
+Configuration file:
+first line input file name/names ?
+then user info ?
 
