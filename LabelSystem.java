@@ -1,7 +1,12 @@
+package CSE3063F20P1_GRP2;
+
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 import org.json.simple.parser.ParseException;
 
@@ -15,7 +20,12 @@ public class LabelSystem{
 		Dataset data = readFile.readFileDataset("input.json");
 	
 		FileHandler fh = new FileHandler("default.log",false); 
-		ArrayList<User> user_list = readFile.readFileUsers("user.json",fh);
+		  Logger logger = Logger.getLogger("MyLog");  
+	      logger.setUseParentHandlers(false);
+	    	logger.addHandler(fh);
+			SimpleFormatter formatter = new SimpleFormatter();  
+			fh.setFormatter(formatter);
+		ArrayList<User> user_list = readFile.readFileUsers("user.json",fh,logger);
 		
 		//label assignments objects
 		ArrayList<LabelAssignment> assignment_list = new ArrayList<LabelAssignment>();
@@ -28,8 +38,8 @@ public class LabelSystem{
 		}
 		
 		//get labelled
-		for (int i = 0; i < assignment_list.size(); i++) {
-			(assignment_list.get(i).getUser()).label(assignment_list.get(i), data.getLabels(), data.getMaxNoLabels(),fh);
+		for (int i = 0; i < assignment_list.size(); i++) {	
+			(assignment_list.get(i).getUser()).label(assignment_list.get(i), data.getLabels(), data.getMaxNoLabels(),fh,logger);
 		}
 
 		

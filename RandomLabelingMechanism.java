@@ -1,5 +1,4 @@
-
-
+package CSE3063F20P1_GRP2;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -17,7 +16,7 @@ public class RandomLabelingMechanism extends User {
 	}
 
 	@Override
-	public void label(LabelAssignment la, ArrayList<Label> l, int max,FileHandler fh){
+	public void label(LabelAssignment la, ArrayList<Label> l, int max,FileHandler fh, Logger logger){
         
         Date currentDate = new Date();
         la.setDate(currentDate);
@@ -43,18 +42,15 @@ public class RandomLabelingMechanism extends User {
         System.out.println(" date: " + la.getDate());
 
       
-        Logger logger = Logger.getLogger("MyLog");  
-
+        
         try {  
 
             // This block configure the logger with handler and formatter   
-            logger.addHandler(fh);
-            SimpleFormatter formatter = new SimpleFormatter();  
-            fh.setFormatter(formatter);  
+             
     
             // the following statement is used to log any messages  
             logger.info(currentDate + "[Instance tagger] INFO user id: " + la.getUser().getId() + " " + la.getUser().getName() + " tagged instance id: " + la.getInstance().getId() + " with class label: ");
-
+            
         for(int i=0;i< times;i++){
             logger.info(la.getClassLabel().get(i).getId() + " " + la.getClassLabel().get(i).getText() );
         }
@@ -69,3 +65,4 @@ public class RandomLabelingMechanism extends User {
        
 	}
 }
+
