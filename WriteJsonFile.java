@@ -1,6 +1,6 @@
-package CSE3063F20P1_GRP2;
+package oosd;
 
-import java.io.File;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,25 +8,18 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-
+@SuppressWarnings("unchecked")
 public class WriteJsonFile {
-	private int datasetID;
-	private String datasetName;
-	private int maxNoLabels;
-	private ArrayList<Label> label_list;
-	private ArrayList<Instance> instance_list;
+	
+	private Dataset data; 
 	private ArrayList<LabelAssignment> assignment_list;
 	private ArrayList<User> user_list;
 
-	@SuppressWarnings("unchecked")
+	
 
-	public WriteJsonFile(int datasetID, String datasetName, int maxNoLabels, ArrayList<Label> label_list,
-			ArrayList<Instance> instance_list, ArrayList<LabelAssignment> assignment_list, ArrayList<User> user_list) {
-		this.datasetID = datasetID;
-		this.datasetName = datasetName;
-		this.maxNoLabels = maxNoLabels;
-		this.label_list = label_list;
-		this.instance_list = instance_list;
+	public WriteJsonFile(Dataset dataset, ArrayList<LabelAssignment> assignment_list, ArrayList<User> user_list) {
+		
+		this.data = dataset;
 		this.assignment_list = assignment_list;
 		this.user_list = user_list;
 	}
@@ -35,12 +28,12 @@ public class WriteJsonFile {
 
 
 		JSONObject dataset = new JSONObject();
-		dataset.put("dataset id ", String.valueOf(datasetID));
-		dataset.put("dataset name ", datasetName);
-		dataset.put("maximum number of labels per instance ", String.valueOf(maxNoLabels));
+		dataset.put("dataset id ", String.valueOf(data.getId()));
+		dataset.put("dataset name ", data.getName());
+		dataset.put("maximum number of labels per instance ", String.valueOf(data.getMaxNoLabels()));
 
 		JSONArray class_labels = new JSONArray();
-		for (Label label : label_list) {
+		for (Label label : data.getLabels()) {
 			JSONObject label_object = new JSONObject();
 			label_object.put("label id", label.getId());
 			label_object.put("label text", label.getText());
@@ -49,7 +42,7 @@ public class WriteJsonFile {
 		dataset.put("class labels", class_labels);
 
 		JSONArray instances = new JSONArray();
-		for (Instance instance : instance_list) {
+		for (Instance instance : data.getInstances()) {
 			JSONObject instance_object = new JSONObject();
 			instance_object.put("id", instance.getId());
 			instance_object.put("instance", instance.getDocument());
@@ -90,5 +83,13 @@ public class WriteJsonFile {
 			e.printStackTrace();
 		}
 
+	}
+
+	public Dataset getDataset() {
+		return data;
+	}
+
+	public void setDataset(Dataset dataset) {
+		this.data = dataset;
 	}
 }
