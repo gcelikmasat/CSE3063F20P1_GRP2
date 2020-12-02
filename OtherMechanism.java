@@ -1,9 +1,6 @@
-
-package CSE3063F20P1_GRP2;
+package oosd;
 
 import java.util.ArrayList;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
 
 public class OtherMechanism extends User {
 
@@ -12,6 +9,13 @@ public class OtherMechanism extends User {
 	}
 
 	@Override
-	public void label(LabelAssignment la, ArrayList<Label> l, int max, FileHandler fh, Logger logger) {
+	public void label(LabelAssignment la, ArrayList<Label> l, int max) {
+
 	}
+
+	@Override
+	public void trace(LabelAssignment la) {
+
+	}
+
 }
