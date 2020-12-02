@@ -1,4 +1,4 @@
-package CSE3063F20P1_GRP2;
+package oosd;
 
 public class Label {
     private int id;
