@@ -1,8 +1,8 @@
-package CSE3063F20P1_GRP2;
+package oosd;
 
 import java.util.ArrayList;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 abstract class User {
 	private int id;
@@ -13,9 +13,18 @@ abstract class User {
 		this.id = id;
 		this.name = name;
 		this.user_type = user_type;
+		trace();
 	}
 
-	abstract void label(LabelAssignment la, ArrayList<Label> l, int max, FileHandler fh, Logger logger);
+	public abstract void label(LabelAssignment la, ArrayList<Label> l, int max);
+	public abstract void trace(LabelAssignment la);
+
+
+	private void trace() {
+
+		Logger logger = LogManager.getLogger();
+		logger.info("created " + this.name + " as " + this.user_type);
+	}
 
 	public String getName() {
 		return name;
