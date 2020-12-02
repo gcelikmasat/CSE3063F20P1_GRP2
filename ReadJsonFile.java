@@ -1,73 +1,59 @@
-package CSE3063F20P1_GRP2;
-
-/*
- * Reads given input json file
- * 	 
- * 
- */
+package oosd;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Date;
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
 public class ReadJsonFile {
-	public Dataset readFileDataset(String fileName) throws FileNotFoundException, IOException, ParseException{
+	public Dataset readFileDataset(String fileName) throws FileNotFoundException, IOException, ParseException {
 
 		JSONParser parser = new JSONParser();
-			Object obj = parser.parse(new FileReader(fileName));
-			JSONObject jsonObject = (JSONObject) obj;
+		Object obj = parser.parse(new FileReader(fileName));
+		JSONObject jsonObject = (JSONObject) obj;
 
-			int datasetID = (int) (long) jsonObject.get("dataset id");
-			String datasetName = (String) jsonObject.get("dataset name");
-			int maxNoLabels = (int) (long) jsonObject.get("maximum number of labels per instance");
+		int datasetID = (int) (long) jsonObject.get("dataset id");
+		String datasetName = (String) jsonObject.get("dataset name");
+		int maxNoLabels = (int) (long) jsonObject.get("maximum number of labels per instance");
 
+		ArrayList<Label> label_list = new ArrayList<Label>();
+		JSONArray labels = (JSONArray) jsonObject.get("class labels");
+		for (int i = 0; i < labels.size(); ++i) {
 
-			ArrayList<Label> label_list = new ArrayList<Label>();
-			JSONArray labels = (JSONArray) jsonObject.get("class labels");
-			for (int i = 0; i < labels.size(); ++i) {
+			JSONObject labelObject = (JSONObject) labels.get(i);
 
-				JSONObject labelObject = (JSONObject) labels.get(i);
+			int labelId = (int) (long) labelObject.get("label id");
+			String labelText = (String) labelObject.get("label text");
 
-				int labelId = (int) (long) labelObject.get("label id");
-				String labelText = (String) labelObject.get("label text");
+			Label label = new Label(labelId, labelText);
+			label_list.add(label);
+		}
 
-				Label label = new Label(labelId, labelText);
-				label_list.add(label);
-			}
+		ArrayList<Instance> instance_list = new ArrayList<Instance>();
+		JSONArray instances = (JSONArray) jsonObject.get("instances");
+		for (int i = 0; i < instances.size(); ++i) {
 
-			ArrayList<Instance> instance_list = new ArrayList<Instance>();
-			JSONArray instances = (JSONArray) jsonObject.get("instances");
-			for (int i = 0; i < instances.size(); ++i) {
+			JSONObject instanceObject = (JSONObject) instances.get(i);
 
-				JSONObject instanceObject = (JSONObject) instances.get(i);
+			int instanceId = (int) (long) instanceObject.get("id");
+			String instanceText = (String) instanceObject.get("instance");
 
-				int instanceId = (int) (long) instanceObject.get("id");
-				String instanceText = (String) instanceObject.get("instance");
+			Instance instance = new Instance(instanceId, instanceText);
+			instance_list.add(instance);
+		}
 
-				Instance instance = new Instance(instanceId, instanceText);
-				instance_list.add(instance);
-			}
-			
-			Dataset tDataset = new Dataset(datasetID, datasetName, maxNoLabels, label_list, instance_list);
-			return tDataset;
-	
+		Dataset tDataset = new Dataset(datasetID, datasetName, maxNoLabels, label_list, instance_list);
+		return tDataset;
+
 	}
 
-	//reads users
-	public ArrayList<User> readFileUsers(String fileName,FileHandler fh, Logger logger) throws FileNotFoundException, IOException, ParseException{
-		
-      
-		Date currentDate = new Date();
-		
+	// reads users
+	public ArrayList<User> readFileUsers(String fileName) throws FileNotFoundException, IOException, ParseException {
+
 		JSONParser parser = new JSONParser();
 		Object obj1 = parser.parse(new FileReader(fileName));
 
@@ -85,42 +71,14 @@ public class ReadJsonFile {
 				User user = new RandomLabelingMechanism(userId, userName, userType);
 				user_list.add(user);
 
-				try {  
-
-					// This block configure the logger with handler and formatter  
-					 
-				  
-			
-					// the following statement is used to log any messages  
-					logger.info(currentDate + "[User Manager] INFO user id: " + user.getId() + " created " + user.getName() + " as " + user.getUser_type() + " \n ");
-					
-				} catch (SecurityException e) {  
-					e.printStackTrace();  
-				}  
-
-			}
-			else {
+			} else {
 				User user = new OtherMechanism(userId, userName, userType);
 				user_list.add(user);
-
-				try {  
-
-					// This block configure the logger with handler and formatter  
-					 
-				
-			
-					// the following statement is used to log any messages  
-					logger.info(currentDate + "[User Manager] INFO user id: " + user.getId() + " created " + user.getName() + " as " + user.getUser_type() + " \n ");
-					
-				} catch (SecurityException e) {  
-					e.printStackTrace();  
-				} 
 			}
-			logger.setUseParentHandlers(false);
-		
+
 		}
 		return user_list;
-		
+
 	}
 
 }
