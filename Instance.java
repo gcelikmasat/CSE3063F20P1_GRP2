@@ -1,4 +1,4 @@
-package oosd;
+package CSE3063F20P1_GRP2;
 
 public class Instance {
     private int id;
