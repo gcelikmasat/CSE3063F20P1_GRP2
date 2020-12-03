@@ -2,9 +2,9 @@
 CSE3063 JAVA Project
 
 Group 2
-150118013 - Gökberk Çelikmasat
-150118065 - Şeref Kutay Akgün
-150117005 - Kadir Acun
-150119825 - Merve Rana Kızıl
-150119824 - Zeynep Ferah Akkurt
-150117905 - Erhan Yalnız
+- 150118013 - Gökberk Çelikmasat
+- 150118065 - Şeref Kutay Akgün
+- 150117005 - Kadir Acun
+- 150119825 - Merve Rana Kızıl
+- 150119824 - Zeynep Ferah Akkurt
+- 150117905 - Erhan Yalnız
