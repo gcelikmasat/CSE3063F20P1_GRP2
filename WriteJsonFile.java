@@ -1,5 +1,6 @@
 package CSE3063F20P1_GRP2;
 
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -10,17 +11,15 @@ import org.json.simple.JSONObject;
 @SuppressWarnings("unchecked")
 
 public class WriteJsonFile {
-	private  Dataset data;
-	private ArrayList<Label> label_list;
-	private ArrayList<Instance> instance_list;
+	
+	Dataset data;
 	private ArrayList<LabelAssignment> assignment_list;
 	private ArrayList<User> user_list;
 
 	//Constructor
 public WriteJsonFile(Dataset dataset, ArrayList<LabelAssignment> assignment_list, ArrayList<User> user_list ) {
-	this.data=dataset;
-	this.label_list = dataset.getLabels();
-	this.instance_list = dataset.getInstances();
+	
+	this.data = dataset;
 	this.assignment_list = assignment_list;
 	this.user_list = user_list;
 }
@@ -40,9 +39,9 @@ public void printToFile(String fileName) {
 
 	i = 0;
 	output += "\"class labels\":[%n";
-	last = label_list.size() - 1;
+	last = data.getLabels().size() - 1;
 	//Add each of the class labels to JSON array 
-	for(Label label: label_list) {
+	for(Label label:  data.getLabels()) {
 	    JSONObject label_object = new JSONObject();
 	    label_object.put("label id", label.getId());
 	    label_object.put("label text", label.getText());
@@ -54,10 +53,10 @@ public void printToFile(String fileName) {
 
 	
 	i = 0;
-	last = instance_list.size() - 1;
+	last = data.getInstances().size() - 1;
 	output += "\"instances\":[%n";
 	//Add each of instances to JSON array 
-	for(Instance instance: instance_list) {
+	for(Instance instance: data.getInstances()) {
 		String temp = "{";
 		temp += "\"id\":" + instance.getId() + ", ";
 		temp += "\"instance\":" + instance.getDocument();
@@ -113,7 +112,5 @@ public void printToFile(String fileName) {
 	} catch (IOException e) {
 	    e.printStackTrace();
 	}
-	
-}
 	
 }
