@@ -10,9 +10,7 @@ import org.json.simple.JSONObject;
 @SuppressWarnings("unchecked")
 
 public class WriteJsonFile {
-	private int datasetID;
-	private String datasetName;
-	private int maxNoLabels;
+	private  Dataset data;
 	private ArrayList<Label> label_list;
 	private ArrayList<Instance> instance_list;
 	private ArrayList<LabelAssignment> assignment_list;
@@ -20,9 +18,7 @@ public class WriteJsonFile {
 
 	//Constructor
 public WriteJsonFile(Dataset dataset, ArrayList<LabelAssignment> assignment_list, ArrayList<User> user_list ) {
-	this.datasetID = dataset.getId();
-	this.datasetName = dataset.getName();
-	this.maxNoLabels = dataset.getMaxNoLabels();
+	this.data=dataset;
 	this.label_list = dataset.getLabels();
 	this.instance_list = dataset.getInstances();
 	this.assignment_list = assignment_list;
@@ -36,9 +32,9 @@ public void printToFile(String fileName) {
 	//We will use this string to build an output file with the expected format
 	String output = "{%n";
 	//Entering key values related to dataset
-	output += "\"dataset id\":" + datasetID + ",%n";
-	output += "\"dataset name\":" + datasetName + ",%n";
-	output += "\"maximum number of labels per instance\":" + maxNoLabels + ",%n";
+	output += "\"dataset id\":" + data.getId() + ",%n";
+	output += "\"dataset name\":" + data.getName() + ",%n";
+	output += "\"maximum number of labels per instance\":" + data.getMaxNoLabels() + ",%n";
 	
 	
 
@@ -119,18 +115,5 @@ public void printToFile(String fileName) {
 	}
 	
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
