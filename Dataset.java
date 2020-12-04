@@ -1,3 +1,10 @@
+/*
+* Dataset.java
+* This class keeps the neccessary informations's (labels,instances..) for labelling operations.
+*
+*/
+
+
 package CSE3063F20P1_GRP2;
 
 import java.io.FileNotFoundException;
@@ -13,14 +20,16 @@ import org.json.simple.parser.ParseException;
 
 public class Dataset {
     
-    private int id;
+    private int id;	
     private String name;
-    private int maxNoLabels;
+    private int maxNoLabels;		
     private ArrayList<Label> labels;
     private ArrayList<Instance> instances;
 
-    
+    //default constructor
     public Dataset() {}
+    
+    //constructor
     public Dataset(int id, String name, int maxNoLabels, ArrayList<Label> labels, ArrayList<Instance> instances){
     this.id = id;
     this.name = name;
@@ -29,6 +38,7 @@ public class Dataset {
     this.instances = new ArrayList<Instance>(instances);
     }
 
+    //getter-setters
     public int getId() {
         return id;
     }
@@ -68,7 +78,7 @@ public class Dataset {
     public void setInstances(ArrayList<Instance> instances) {
         this.instances = instances;
     }
-
+    //prints labels 
     public void printLabels(){
         System.out.println("Class Labels :");
         for(int i=0; i< this.labels.size(); i++){
@@ -76,7 +86,7 @@ public class Dataset {
             "Label text: " + this.labels.get(i).getText() + "\n");
         }
     }
-
+    //prints instances
     public void printInstances(){
         System.out.println("Instances :");
         for(int i=0; i< this.instances.size(); i++){
@@ -84,7 +94,7 @@ public class Dataset {
             "Instance: " + this.instances.get(i).getDocument() + "\n");
         }
     }
-
+    //print datasets
     public void printDataset(){
         System.out.print("Dataset id: " + getId() + "\n" +
         "Dataset Name: " + getName() + "\n" +
@@ -93,6 +103,8 @@ public class Dataset {
         printLabels();
         printInstances();
     }
+	
+    //reads given json file and sets the dataset object
     public void readFileDataset(String fileName) throws FileNotFoundException, IOException, ParseException {
 
 		JSONParser parser = new JSONParser();
@@ -129,7 +141,7 @@ public class Dataset {
 			instance_list.add(instance);
 		}
 
-		this.id = datasetID;
+	    this.id = datasetID;
 	    this.name = datasetName;
 	    this.maxNoLabels = maxNoLabels;
 	    this.labels = new ArrayList<Label>(label_list);
