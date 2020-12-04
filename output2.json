@@ -1,0 +1,53 @@
+{
+"dataset id":2,
+"dataset name":Multilabel Topic Classification Dataset,
+"maximum number of labels per instance":10,
+"class labels":[
+{"label id":1,"label text":"bayi "},
+{"label id":2,"label text":"numara "},
+{"label id":3,"label text":"hat "},
+{"label id":4,"label text":"iþlem"},
+{"label id":5,"label text":"müþteri"},
+{"label id":6,"label text":"bilgi "},
+{"label id":7,"label text":"telefon"},
+{"label id":8,"label text":"konu "},
+{"label id":9,"label text":"firma "},
+{"label id":10,"label text":"cihaz"},
+{"label id":11,"label text":"hat "},
+{"label id":12,"label text":"borç "},
+{"label id":13,"label text":"fatura "},
+{"label id":14,"label text":"taraf"},
+{"label id":15,"label text":"borç "},
+{"label id":16,"label text":"paket"}
+],
+"instances":[
+{"id":1, "instance":35 tl kesinti yapmýþ turkcell'den üzerime kayýtlý numara olmamasýna raðmen iki aydýr ekstremden 35'er tl. kesilmiþtir.},
+{"id":2, "instance":tele kurye iþýk hýzýnda turkcell'den aldýðým cihaz tele kurye denen ilgisiz, telefonlara bakmayan bir kurye tarafýndan 10 gündür elime ulaþýlmadý. telefonlarýma bakýlmýyor ne ciddiyetsiz kurumsallaþmamýþ bir kurye firmasý turkcell'e bu katkýlarýndan dolayý teþekkürler!},
+{"id":3, "instance":bursa anatolium müþteriyi kandýrma 15 eylül günü bursa anatolium turkcell maðazasýna iphone cihazým için þarj kablosu almaya gittim. aksesuar için etikette yazan fiyat 89,90dý turkcell uygulamada son bahar indiriminden dolayý fiyatýn 63 tl olduðunu gösterdim; aldýðým cevap uygulamadaki ürünün orijinal olmadýðýydý. o ürün orijinal deðil, sýkýntý yaþamak istemiyorsanýz bunu alýn gibi bir cevap verildi. ürünü aldým kartýmý uzattým þifremi girmek için cihaza yöneldiðimde ekranda 90,00 tl yazdýðýný fark ettim. sorduðumda ben size 10 kuruþ geri veririm ablacým diye bit yanýt aldým. bugün turkcell müþteri hizmetlerini aradým ve uygulamadaki ürünün orijinal olduðunu satýþ fiyatýnýn farklý olabileceðini öðrendim. satýþ fiyatý farklý olabilir evet, ama turkcell'i temsil eden bir çalýþan nasýl ürünün sahte olduðunu söyleyebilir, ikincisi benden 10 kuruþ baþkasýndan 50 kuruþ diye diye neyin hesabý bu?},
+{"id":4, "instance":turkcell haksýz borçlar turkcell **** numaralý ödediðim faturalardan devir bakiyesini almýyor sonra 2011 yýlýndaki 1 kuruþluk faturayý ödemediði iddia ederek borcu tarafýma 10 tl olarak icra baþlatýyor ve bunu avukat ývýr zývýr olarak 500 tl bitirecek. borcu, reel alacak diye bir firmaya devrediyor turkcell ismine yakýþmayan bir þey. 2011 'den bu yana 6 sene içerisinde tarafýma bir tebligat bile yapmýyor yazýk yazýk.},
+{"id":5, "instance":turkcell bana sormadan paket tanýmlanmýþ! turkcell internet paketim bitince bana sormadan otomatik olarak 1 gb internet tanýmlamýþ ve 10 tl yansýtmýþ, ayrýca fatura kesim tarihim 1 gün kala bu paketi tanýmlamýþ ve fatura kesim tarihi yani 1 gün sonrasýnda bu paketi iptal etmiþ ve ücreti iptal etmemiþtir.}
+],
+"class label assignments":[
+{"instance id":1, "class label ids":[5,9,10,13,14,15], "user id":1, "datetime":04/12/2020, 05:59:12},
+{"instance id":1, "class label ids":[1,3,4,5,6,10,14,15,16], "user id":2, "datetime":04/12/2020, 05:59:12},
+{"instance id":1, "class label ids":[], "user id":3, "datetime":04/12/2020, 05:59:12},
+{"instance id":2, "class label ids":[3,5,9,12], "user id":1, "datetime":04/12/2020, 05:59:12},
+{"instance id":2, "class label ids":[1,2,5,6,8,9,11,14,15,16], "user id":2, "datetime":04/12/2020, 05:59:12},
+{"instance id":2, "class label ids":[], "user id":3, "datetime":04/12/2020, 05:59:12},
+{"instance id":3, "class label ids":[1,2,3,5,7,10,12,14], "user id":1, "datetime":04/12/2020, 05:59:12},
+{"instance id":3, "class label ids":[4,5,6,9,10,16], "user id":2, "datetime":04/12/2020, 05:59:12},
+{"instance id":3, "class label ids":[], "user id":3, "datetime":04/12/2020, 05:59:12},
+{"instance id":4, "class label ids":[3,4,5,6,11,12], "user id":1, "datetime":04/12/2020, 05:59:12},
+{"instance id":4, "class label ids":[2,3,4,5,6,8,10,11,12,15], "user id":2, "datetime":04/12/2020, 05:59:12},
+{"instance id":4, "class label ids":[], "user id":3, "datetime":04/12/2020, 05:59:12},
+{"instance id":5, "class label ids":[1,2,4,6,8,9,14], "user id":1, "datetime":04/12/2020, 05:59:12},
+{"instance id":5, "class label ids":[1,3,7,13,14], "user id":2, "datetime":04/12/2020, 05:59:12},
+{"instance id":5, "class label ids":[], "user id":3, "datetime":04/12/2020, 05:59:12}
+],
+"users":[
+{"user id":1,"user name":RandomLabelingMechanism1,"user type":RandomBot},
+{"user id":2,"user name":RandomLabelingMechanism2,"user type":RandomBot},
+{"user id":3,"user name":MachineLearningLabelingMechanism,"user type":MachineLearningBot}
+]
+
+}
