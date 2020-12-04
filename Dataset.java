@@ -1,6 +1,6 @@
 /*
 * Dataset.java
-* This class keeps the neccessary informations's (labels,instances..) for labelling operations.
+* This class keeps the neccessary informations (labels,instances..) for labelling operations.
 *
 */
 
