@@ -27,7 +27,7 @@ public class Label {
 
     @Override
     public String toString() {
-        return "Label [id=" + id + ", text=" + text + "]";
+        return  id + ":" + text;
     }
 
     
