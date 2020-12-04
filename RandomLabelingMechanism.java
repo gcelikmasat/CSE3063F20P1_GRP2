@@ -1,9 +1,15 @@
+/* 
+* RandomLabellingMechanism.java
+* This class is subclass of User. 
+* It creates RandomBots and labels instances randomly. 
+*
+*/
+
 package CSE3063F20P1_GRP2;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,6 +20,7 @@ public class RandomLabelingMechanism extends User {
 	}
 
 	@SuppressWarnings("unchecked")
+	//labels instances randomly
 	@Override
 	public void label(LabelAssignment la, ArrayList<Label> l, int max) {
 
@@ -28,24 +35,11 @@ public class RandomLabelingMechanism extends User {
 
 			la.getClassLabel().add(clone.get(random));
 			clone.remove(random);
-		}
-		// System.out.print("instance id: " + la.getInstance().getId());
-
+		}	
 		la.getClassLabel().sort(Comparator.comparing(Label::getId));
-
-		// System.out.print(" class label id: ");
-		/*
-		 * for (int x = 0; x < times; x++) {
-		 * System.out.print(la.getClassLabel().get(x).getId() + " ");
-		 * 
-		 * }
-		 */
-
-		// System.out.print(" user id: " + la.getUser().getId());
-		// System.out.println(" date: " + la.getDate());
-
 	}
 
+	//trace actions
 	public void trace(LabelAssignment la) {
 
 		Logger logger = LogManager.getLogger();
