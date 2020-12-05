@@ -19,7 +19,7 @@ abstract class User {
 	public abstract void label(LabelAssignment la, ArrayList<Label> l, int max);
 	public abstract void trace(LabelAssignment la);
 
-
+	// trace actions
 	private void trace() {
 
 		Logger logger = LogManager.getLogger();
