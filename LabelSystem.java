@@ -1,3 +1,11 @@
+/*
+*
+* Data labeling system as a simulation
+* 
+* In this program, users labels an instance one by one. 
+*
+*/
+
 package CSE3063F20P1_GRP2;
 
 import java.io.FileNotFoundException;
@@ -12,6 +20,7 @@ import org.json.simple.parser.ParseException;
 
 public class LabelSystem {
 
+	//reads users from a given .json file
 	public static ArrayList<User> readFileUsers(String fileName) throws FileNotFoundException, IOException, ParseException {
 
 		JSONParser parser = new JSONParser();
@@ -19,9 +28,11 @@ public class LabelSystem {
 
 		JSONObject jsonObject1 = (JSONObject) obj1;
 		JSONArray users = (JSONArray) jsonObject1.get("users");
+		//keeps users information
 		ArrayList<User> user_list = new ArrayList<User>();
+		
+		//user id,name,type
 		for (int i = 0; i < users.size(); ++i) {
-
 			JSONObject userObject = (JSONObject) users.get(i);
 			int userId = (int) (long) userObject.get("user id");
 			String userName = (String) userObject.get("user name");
@@ -43,7 +54,7 @@ public class LabelSystem {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
 
-		Dataset data = new Dataset();
+		Dataset data = new Dataset();			//general dataset for system simulation
 		data.readFileDataset("input.json");
 		ArrayList<User> user_list = readFileUsers("user.json");
 
