@@ -1,53 +1,53 @@
 {
 "dataset id":2,
-"dataset name":Multilabel Topic Classification Dataset,
+"dataset name": "Multilabel Topic Classification Dataset",
 "maximum number of labels per instance":10,
 "class labels":[
 {"label id":1,"label text":"bayi "},
 {"label id":2,"label text":"numara "},
 {"label id":3,"label text":"hat "},
-{"label id":4,"label text":"işlem"},
-{"label id":5,"label text":"müşteri"},
+{"label id":4,"label text":"iÅŸlem"},
+{"label id":5,"label text":"mÃ¼ÅŸteri"},
 {"label id":6,"label text":"bilgi "},
 {"label id":7,"label text":"telefon"},
 {"label id":8,"label text":"konu "},
 {"label id":9,"label text":"firma "},
 {"label id":10,"label text":"cihaz"},
 {"label id":11,"label text":"hat "},
-{"label id":12,"label text":"borç "},
+{"label id":12,"label text":"borÃ§ "},
 {"label id":13,"label text":"fatura "},
 {"label id":14,"label text":"taraf"},
-{"label id":15,"label text":"borç "},
+{"label id":15,"label text":"borÃ§ "},
 {"label id":16,"label text":"paket"}
 ],
 "instances":[
-{"id":1, "instance":35 tl kesinti yapmış turkcell'den üzerime kayıtlı numara olmamasına rağmen iki aydır ekstremden 35'er tl. kesilmiştir.},
-{"id":2, "instance":tele kurye işık hızında turkcell'den aldığım cihaz tele kurye denen ilgisiz, telefonlara bakmayan bir kurye tarafından 10 gündür elime ulaşılmadı. telefonlarıma bakılmıyor ne ciddiyetsiz kurumsallaşmamış bir kurye firması turkcell'e bu katkılarından dolayı teşekkürler!},
-{"id":3, "instance":bursa anatolium müşteriyi kandırma 15 eylül günü bursa anatolium turkcell mağazasına iphone cihazım için şarj kablosu almaya gittim. aksesuar için etikette yazan fiyat 89,90dı turkcell uygulamada son bahar indiriminden dolayı fiyatın 63 tl olduğunu gösterdim; aldığım cevap uygulamadaki ürünün orijinal olmadığıydı. o ürün orijinal değil, sıkıntı yaşamak istemiyorsanız bunu alın gibi bir cevap verildi. ürünü aldım kartımı uzattım şifremi girmek için cihaza yöneldiğimde ekranda 90,00 tl yazdığını fark ettim. sorduğumda ben size 10 kuruş geri veririm ablacım diye bit yanıt aldım. bugün turkcell müşteri hizmetlerini aradım ve uygulamadaki ürünün orijinal olduğunu satış fiyatının farklı olabileceğini öğrendim. satış fiyatı farklı olabilir evet, ama turkcell'i temsil eden bir çalışan nasıl ürünün sahte olduğunu söyleyebilir, ikincisi benden 10 kuruş başkasından 50 kuruş diye diye neyin hesabı bu?},
-{"id":4, "instance":turkcell haksız borçlar turkcell **** numaralı ödediğim faturalardan devir bakiyesini almıyor sonra 2011 yılındaki 1 kuruşluk faturayı ödemediği iddia ederek borcu tarafıma 10 tl olarak icra başlatıyor ve bunu avukat ıvır zıvır olarak 500 tl bitirecek. borcu, reel alacak diye bir firmaya devrediyor turkcell ismine yakışmayan bir şey. 2011 'den bu yana 6 sene içerisinde tarafıma bir tebligat bile yapmıyor yazık yazık.},
-{"id":5, "instance":turkcell bana sormadan paket tanımlanmış! turkcell internet paketim bitince bana sormadan otomatik olarak 1 gb internet tanımlamış ve 10 tl yansıtmış, ayrıca fatura kesim tarihim 1 gün kala bu paketi tanımlamış ve fatura kesim tarihi yani 1 gün sonrasında bu paketi iptal etmiş ve ücreti iptal etmemiştir.}
+{"id":1, "instance": "35 tl kesinti yapmÄ±ÅŸ turkcell'den Ã¼zerime kayÄ±tlÄ± numara olmamasÄ±na raÄŸmen iki aydÄ±r ekstremden 35'er tl. kesilmiÅŸtir."},
+{"id":2, "instance": "tele kurye iÅŸÄ±k hÄ±zÄ±nda turkcell'den aldÄ±ÄŸÄ±m cihaz tele kurye denen ilgisiz, telefonlara bakmayan bir kurye tarafÄ±ndan 10 gÃ¼ndÃ¼r elime ulaÅŸÄ±lmadÄ±. telefonlarÄ±ma bakÄ±lmÄ±yor ne ciddiyetsiz kurumsallaÅŸmamÄ±ÅŸ bir kurye firmasÄ± turkcell'e bu katkÄ±larÄ±ndan dolayÄ± teÅŸekkÃ¼rler!"},
+{"id":3, "instance": "bursa anatolium mÃ¼ÅŸteriyi kandÄ±rma 15 eylÃ¼l gÃ¼nÃ¼ bursa anatolium turkcell maÄŸazasÄ±na iphone cihazÄ±m iÃ§in ÅŸarj kablosu almaya gittim. aksesuar iÃ§in etikette yazan fiyat 89,90dÄ± turkcell uygulamada son bahar indiriminden dolayÄ± fiyatÄ±n 63 tl olduÄŸunu gÃ¶sterdim; aldÄ±ÄŸÄ±m cevap uygulamadaki Ã¼rÃ¼nÃ¼n orijinal olmadÄ±ÄŸÄ±ydÄ±. o Ã¼rÃ¼n orijinal deÄŸil, sÄ±kÄ±ntÄ± yaÅŸamak istemiyorsanÄ±z bunualÄ±n gibi bir cevap verildi. Ã¼rÃ¼nÃ¼ aldÄ±m kartÄ±mÄ± uzattÄ±m ÅŸifremi girmek iÃ§in cihaza yÃ¶neldiÄŸimde ekranda 90,00 tl yazdÄ±ÄŸÄ±nÄ± fark ettim. sorduÄŸumda ben size 10 kuruÅŸ geri veririm ablacÄ±m diye bit yanÄ±t aldÄ±m. bugÃ¼n turkcell mÃ¼ÅŸteri hizmetlerini aradÄ±m ve uygulamadaki Ã¼rÃ¼nÃ¼n orijinal olduÄŸunu satÄ±ÅŸ fiyatÄ±nÄ±n farklÄ± olabileceÄŸini Ã¶ÄŸrendim. satÄ±ÅŸ fiyatÄ± farklÄ± olabilir evet, ama turkcell'i temsil eden bir Ã§alÄ±ÅŸan nasÄ±l Ã¼rÃ¼nÃ¼n sahte olduÄŸunu sÃ¶yleyebilir, ikincisi benden 10 kuruÅŸ baÅŸkasÄ±ndan 50 kuruÅŸ diye diye neyin hesabÄ± bu?"},
+{"id":4, "instance": "turkcell haksÄ±z borÃ§lar turkcell **** numaralÄ± Ã¶dediÄŸim faturalardan devir bakiyesini almÄ±yor sonra 2011 yÄ±lÄ±ndaki 1 kuruÅŸluk faturayÄ± Ã¶demediÄŸi iddia ederek borcu tarafÄ±ma 10 tl olarak icra baÅŸlatÄ±yor ve bunu avukat Ä±vÄ±r zÄ±vÄ±r olarak 500 tl bitirecek. borcu, reel alacak diye bir firmaya devrediyor turkcell ismine yakÄ±ÅŸmayan bir ÅŸey. 2011 'den bu yana 6 sene iÃ§erisinde tarafÄ±ma bir tebligat bile yapmÄ±yor yazÄ±k yazÄ±k."},
+{"id":5, "instance": "turkcell bana sormadan paket tanÄ±mlanmÄ±ÅŸ! turkcell internet paketim bitince bana sormadan otomatik olarak 1 gb internet tanÄ±mlamÄ±ÅŸ ve 10 tl yansÄ±tmÄ±ÅŸ, ayrÄ±ca fatura kesim tarihim 1 gÃ¼n kala bu paketi tanÄ±mlamÄ±ÅŸ ve fatura kesim tarihi yani 1 gÃ¼n sonrasÄ±nda bu paketi iptal etmiÅŸ ve Ã¼creti iptal etmemiÅŸtir."}
 ],
 "class label assignments":[
-{"instance id":1, "class label ids":[5,9,10,13,14,15], "user id":1, "datetime":04/12/2020, 05:59:12},
-{"instance id":1, "class label ids":[1,3,4,5,6,10,14,15,16], "user id":2, "datetime":04/12/2020, 05:59:12},
-{"instance id":1, "class label ids":[], "user id":3, "datetime":04/12/2020, 05:59:12},
-{"instance id":2, "class label ids":[3,5,9,12], "user id":1, "datetime":04/12/2020, 05:59:12},
-{"instance id":2, "class label ids":[1,2,5,6,8,9,11,14,15,16], "user id":2, "datetime":04/12/2020, 05:59:12},
-{"instance id":2, "class label ids":[], "user id":3, "datetime":04/12/2020, 05:59:12},
-{"instance id":3, "class label ids":[1,2,3,5,7,10,12,14], "user id":1, "datetime":04/12/2020, 05:59:12},
-{"instance id":3, "class label ids":[4,5,6,9,10,16], "user id":2, "datetime":04/12/2020, 05:59:12},
-{"instance id":3, "class label ids":[], "user id":3, "datetime":04/12/2020, 05:59:12},
-{"instance id":4, "class label ids":[3,4,5,6,11,12], "user id":1, "datetime":04/12/2020, 05:59:12},
-{"instance id":4, "class label ids":[2,3,4,5,6,8,10,11,12,15], "user id":2, "datetime":04/12/2020, 05:59:12},
-{"instance id":4, "class label ids":[], "user id":3, "datetime":04/12/2020, 05:59:12},
-{"instance id":5, "class label ids":[1,2,4,6,8,9,14], "user id":1, "datetime":04/12/2020, 05:59:12},
-{"instance id":5, "class label ids":[1,3,7,13,14], "user id":2, "datetime":04/12/2020, 05:59:12},
-{"instance id":5, "class label ids":[], "user id":3, "datetime":04/12/2020, 05:59:12}
+{"instance id":1, "class label ids":[3,5,6,7,10,14,15], "user id":1, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":1, "class label ids":[4,15], "user id":2, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":1, "class label ids":[], "user id":3, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":2, "class label ids":[4], "user id":1, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":2, "class label ids":[2,3,9,13,15,16], "user id":2, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":2, "class label ids":[], "user id":3, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":3, "class label ids":[2,12,15], "user id":1, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":3, "class label ids":[2], "user id":2, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":3, "class label ids":[], "user id":3, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":4, "class label ids":[2,9,12,13,15], "user id":1, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":4, "class label ids":[1,2,3,6,9,10,13], "user id":2, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":4, "class label ids":[], "user id":3, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":5, "class label ids":[4,5,10], "user id":1, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":5, "class label ids":[2,4,6,9,12,13,15,16], "user id":2, "datetime": "05/12/2020, 12:18:21"},
+{"instance id":5, "class label ids":[], "user id":3, "datetime": "05/12/2020, 12:18:21"}
 ],
 "users":[
-{"user id":1,"user name":RandomLabelingMechanism1,"user type":RandomBot},
-{"user id":2,"user name":RandomLabelingMechanism2,"user type":RandomBot},
-{"user id":3,"user name":MachineLearningLabelingMechanism,"user type":MachineLearningBot}
+{"user id":1,"user name": "RandomLabelingMechanism1","user type": "RandomBot"},
+{"user id":2,"user name": "RandomLabelingMechanism2","user type": "RandomBot"},
+{"user id":3,"user name": "MachineLearningLabelingMechanism","user type": "MachineLearningBot"}
 ]
 
 }
