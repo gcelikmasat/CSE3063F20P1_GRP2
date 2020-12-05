@@ -1,0 +1,30 @@
+{
+"dataset id":2,
+"dataset name":"Multilabel Topic Classification Dataset",
+"maximum number of labels per instance":10,
+"class labels":[ 
+{"label id":1,"label text":"bayi "}, 
+{"label id":2,"label text":"numara "}, 
+{"label id":3,"label text":"hat "}, 
+{"label id":4,"label text":"işlem"}, 
+{"label id":5,"label text":"müşteri"}, 
+{"label id":6,"label text":"bilgi "}, 
+{"label id":7,"label text":"telefon"}, 
+{"label id":8,"label text":"konu "}, 
+{"label id":9,"label text":"firma "}, 
+{"label id":10,"label text":"cihaz"}, 
+{"label id":11,"label text":"hat "}, 
+{"label id":12,"label text":"borç "}, 
+{"label id":13,"label text":"fatura "}, 
+{"label id":14,"label text":"taraf"}, 
+{"label id":15,"label text":"borç "}, 
+{"label id":16,"label text":"paket"} 
+],
+"instances":[
+{"id":1, "instance":"35 tl kesinti yapmış turkcell'den üzerime kayıtlı numara olmamasına rağmen iki aydır ekstremden 35'er tl. kesilmiştir."},
+{"id":2, "instance":"tele kurye işık hızında turkcell'den aldığım cihaz tele kurye denen ilgisiz, telefonlara bakmayan bir kurye tarafından 10 gündür elime ulaşılmadı. telefonlarıma bakılmıyor ne ciddiyetsiz kurumsallaşmamış bir kurye firması turkcell'e bu katkılarından dolayı teşekkürler!"},
+{"id":3, "instance":"bursa anatolium müşteriyi kandırma 15 eylül günü bursa anatolium turkcell mağazasına iphone cihazım için şarj kablosu almaya gittim. aksesuar için etikette yazan fiyat 89,90dı turkcell uygulamada son bahar indiriminden dolayı fiyatın 63 tl olduğunu gösterdim; aldığım cevap uygulamadaki ürünün orijinal olmadığıydı. o ürün orijinal değil, sıkıntı yaşamak istemiyorsanız bunu alın gibi bir cevap verildi. ürünü aldım kartımı uzattım şifremi girmek için cihaza yöneldiğimde ekranda 90,00 tl yazdığını fark ettim. sorduğumda ben size 10 kuruş geri veririm ablacım diye bit yanıt aldım. bugün turkcell müşteri hizmetlerini aradım ve uygulamadaki ürünün orijinal olduğunu satış fiyatının farklı olabileceğini öğrendim. satış fiyatı farklı olabilir evet, ama turkcell'i temsil eden bir çalışan nasıl ürünün sahte olduğunu söyleyebilir, ikincisi benden 10 kuruş başkasından 50 kuruş diye diye neyin hesabı bu?"},
+{"id":4, "instance":"turkcell haksız borçlar turkcell **** numaralı ödediğim faturalardan devir bakiyesini almıyor sonra 2011 yılındaki 1 kuruşluk faturayı ödemediği iddia ederek borcu tarafıma 10 tl olarak icra başlatıyor ve bunu avukat ıvır zıvır olarak 500 tl bitirecek. borcu, reel alacak diye bir firmaya devrediyor turkcell ismine yakışmayan bir şey. 2011 'den bu yana 6 sene içerisinde tarafıma bir tebligat bile yapmıyor yazık yazık."},
+{"id":5, "instance":"turkcell bana sormadan paket tanımlanmış! turkcell internet paketim bitince bana sormadan otomatik olarak 1 gb internet tanımlamış ve 10 tl yansıtmış, ayrıca fatura kesim tarihim 1 gün kala bu paketi tanımlamış ve fatura kesim tarihi yani 1 gün sonrasında bu paketi iptal etmiş ve ücreti iptal etmemiştir."}
+]
+} 
