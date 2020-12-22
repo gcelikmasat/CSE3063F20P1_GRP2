@@ -1,0 +1,386 @@
+********Dataset1 Sentiment Dataset Metrics********
+Percentage of the instances are labeled in dataset 1 : %100.0
+Class distribution based on final instance labels: 
+1: Positive: %50.0
+2: Negative: %10.0
+3: Notr: %40.0
+List number of unique instances for each class label: 
+1: Positive: [1, 2, 3, 4, 5, 6, 7, 9, 10]
+2: Negative: [1, 2, 4, 5, 7, 8, 10]
+3: Notr: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+Number of users assigned: 3
+completeness percentage of user 1: %100.0
+completeness percentage of user 2: %100.0
+completeness percentage of user 4: %100.0
+
+consistency percentage of user 1: %52.38095238095239
+consistency percentage of user 2: %66.66666666666666
+consistency percentage of user 4: %61.53846153846154
+
+*************** Instance Metrics ***************
+Instance: 1
+Total number of assignment = 11
+Number of unique label assignments: 3
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  3:Notr %:63.63636363636363
+Final label:: 3:Notr
+3:Notr: %63.63636363636363
+2:Negative: %27.27272727272727
+1:Positive: %9.090909090909092
+Entropy: 
+-1*0.6363636363636364*log(0.6363636363636364;3)-1*0.2727272727272727*log(0.2727272727272727;3)-1*0.09090909090909091*log(0.09090909090909091;3)
+Result: = 0.7827759528141421
+
+Instance: 2
+Total number of assignment = 12
+Number of unique label assignments: 3
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  2:Negative %:41.66666666666667
+Final label:: 2:Negative
+2:Negative: %41.66666666666667
+1:Positive: %33.33333333333333
+3:Notr: %25.0
+Entropy: 
+-1*0.41666666666666674*log(0.41666666666666674;3)-1*0.33333333333333326*log(0.33333333333333326;3)-1*0.25*log(0.25;3)
+Result: = 0.9808340377961402
+
+Instance: 3
+Total number of assignment = 5
+Number of unique label assignments: 2
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  3:Notr %:60.0
+Final label:: 3:Notr
+3:Notr: %60.0
+1:Positive: %40.0
+Entropy: 
+-1*0.6*log(0.6;2)-1*0.4*log(0.4;2)
+Result: = 0.9709505944546686
+
+Instance: 4
+Total number of assignment = 11
+Number of unique label assignments: 3
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  3:Notr %:36.36363636363637
+Final label:: 3:Notr
+3:Notr: %36.36363636363637
+1:Positive: %36.36363636363637
+2:Negative: %27.27272727272727
+Entropy: 
+-1*0.36363636363636365*log(0.36363636363636365;3)-1*0.36363636363636365*log(0.36363636363636365;3)-1*0.2727272727272727*log(0.2727272727272727;3)
+Result: = 0.9922150607220181
+
+Instance: 5
+Total number of assignment = 6
+Number of unique label assignments: 3
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  1:Positive %:33.33333333333333
+Final label:: 1:Positive
+1:Positive: %33.33333333333333
+2:Negative: %33.33333333333333
+3:Notr: %33.33333333333333
+Entropy: 
+-1*0.33333333333333326*log(0.33333333333333326;3)-1*0.33333333333333326*log(0.33333333333333326;3)-1*0.33333333333333326*log(0.33333333333333326;3)
+Result: = 1.0
+
+Instance: 6
+Total number of assignment = 9
+Number of unique label assignments: 2
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  1:Positive %:55.55555555555556
+Final label:: 1:Positive
+1:Positive: %55.55555555555556
+3:Notr: %44.44444444444444
+Entropy: 
+-1*0.5555555555555556*log(0.5555555555555556;2)-1*0.4444444444444444*log(0.4444444444444444;2)
+Result: = 0.9910760598382222
+
+Instance: 7
+Total number of assignment = 6
+Number of unique label assignments: 3
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  1:Positive %:50.0
+Final label:: 1:Positive
+3:Notr: %16.666666666666664
+1:Positive: %50.0
+2:Negative: %33.33333333333333
+Entropy: 
+-1*0.16666666666666663*log(0.16666666666666663;3)-1*0.5*log(0.5;3)-1*0.33333333333333326*log(0.33333333333333326;3)
+Result: = 0.920619835714305
+
+Instance: 8
+Total number of assignment = 6
+Number of unique label assignments: 2
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  3:Notr %:66.66666666666666
+Final label:: 3:Notr
+3:Notr: %66.66666666666666
+2:Negative: %33.33333333333333
+Entropy: 
+-1*0.6666666666666665*log(0.6666666666666665;2)-1*0.33333333333333326*log(0.33333333333333326;2)
+Result: = 0.9182958340544898
+
+Instance: 9
+Total number of assignment = 5
+Number of unique label assignments: 2
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  1:Positive %:80.0
+Final label:: 1:Positive
+1:Positive: %80.0
+3:Notr: %20.0
+Entropy: 
+-1*0.8*log(0.8;2)-1*0.2*log(0.2;2)
+Result: = 0.7219280948873623
+
+Instance: 10
+Total number of assignment = 6
+Number of unique label assignments: 2
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  1:Positive %:50.0
+Final label:: 1:Positive
+1:Positive: %50.0
+2:Negative: %50.0
+Entropy: 
+-1*0.5*log(0.5;2)-1*0.5*log(0.5;2)
+Result: = 1.0
+
+********Dataset2 Multilabel Topic Classification Dataset Metrics********
+Percentage of the instances are labeled in dataset 2 : %100.0
+Class distribution based on final instance labels: 
+1: bayi : %0.0
+2: numara : %20.0
+3: hat : %0.0
+4: iþlem: %0.0
+5: müþteri: %0.0
+6: bilgi : %20.0
+7: telefon: %20.0
+8: konu : %20.0
+9: firma : %0.0
+10: cihaz: %0.0
+11: hat : %0.0
+12: borç : %0.0
+13: fatura : %0.0
+14: taraf: %0.0
+15: borç : %0.0
+16: paket: %20.0
+List number of unique instances for each class label: 
+1: bayi : [1, 2, 4, 5]
+2: numara : [1, 2, 3, 4, 5]
+3: hat : [1, 2, 3, 4, 5]
+4: iþlem: [1, 2, 3, 5]
+5: müþteri: [1, 2, 4, 5]
+6: bilgi : [1, 2, 3, 4, 5]
+7: telefon: [1, 2, 3, 4, 5]
+8: konu : [1, 2, 3, 4]
+9: firma : [1, 2, 5]
+10: cihaz: [1, 2, 5]
+11: hat : [1, 2, 3, 5]
+12: borç : [1, 2, 3, 5]
+13: fatura : [1, 2, 3, 5]
+14: taraf: [1, 2, 3]
+15: borç : [1, 2, 3, 4, 5]
+16: paket: [1, 2, 3, 4, 5]
+Number of users assigned: 4
+completeness percentage of user 1: %100.0
+completeness percentage of user 2: %100.0
+completeness percentage of user 3: %0.0
+completeness percentage of user 5: %100.0
+
+consistency percentage of user 1: %61.53846153846154
+consistency percentage of user 2: %16.666666666666664
+consistency percentage of user 3: %0.0
+consistency percentage of user 5: %28.57142857142857
+
+*************** Instance Metrics ***************
+Instance: 1
+Total number of assignment = 8
+Number of unique label assignments: 16
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  16:paket %:10.526315789473683
+Final label:: 16:paket
+16:paket: %10.526315789473683
+6:bilgi : %5.263157894736842
+4:iþlem: %5.263157894736842
+15:borç : %7.894736842105263
+5:müþteri: %2.631578947368421
+10:cihaz: %10.526315789473683
+1:bayi : %7.894736842105263
+3:hat : %5.263157894736842
+7:telefon: %10.526315789473683
+12:borç : %7.894736842105263
+8:konu : %5.263157894736842
+11:hat : %5.263157894736842
+14:taraf: %5.263157894736842
+13:fatura : %5.263157894736842
+2:numara : %2.631578947368421
+9:firma : %2.631578947368421
+Entropy: 
+-1*0.10526315789473684*log(0.10526315789473684;16)-1*0.05263157894736842*log(0.05263157894736842;16)-1*0.05263157894736842*log(0.05263157894736842;16)-1*0.07894736842105263*log(0.07894736842105263;16)-1*0.02631578947368421*log(0.02631578947368421;16)-1*0.10526315789473684*log(0.10526315789473684;16)-1*0.07894736842105263*log(0.07894736842105263;16)-1*0.05263157894736842*log(0.05263157894736842;16)-1*0.10526315789473684*log(0.10526315789473684;16)-1*0.07894736842105263*log(0.07894736842105263;16)-1*0.05263157894736842*log(0.05263157894736842;16)-1*0.05263157894736842*log(0.05263157894736842;16)-1*0.05263157894736842*log(0.05263157894736842;16)-1*0.05263157894736842*log(0.05263157894736842;16)-1*0.02631578947368421*log(0.02631578947368421;16)-1*0.02631578947368421*log(0.02631578947368421;16)
+Result: = 0.9681354145024071
+
+Instance: 2
+Total number of assignment = 6
+Number of unique label assignments: 16
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  8:konu  %:12.5
+Final label:: 8:konu 
+8:konu : %12.5
+9:firma : %9.375
+14:taraf: %6.25
+10:cihaz: %6.25
+7:telefon: %9.375
+2:numara : %3.125
+6:bilgi : %6.25
+4:iþlem: %3.125
+12:borç : %9.375
+15:borç : %6.25
+13:fatura : %6.25
+3:hat : %3.125
+11:hat : %3.125
+1:bayi : %3.125
+16:paket: %6.25
+5:müþteri: %6.25
+Entropy: 
+-1*0.125*log(0.125;16)-1*0.09375*log(0.09375;16)-1*0.0625*log(0.0625;16)-1*0.0625*log(0.0625;16)-1*0.09375*log(0.09375;16)-1*0.03125*log(0.03125;16)-1*0.0625*log(0.0625;16)-1*0.03125*log(0.03125;16)-1*0.09375*log(0.09375;16)-1*0.0625*log(0.0625;16)-1*0.0625*log(0.0625;16)-1*0.03125*log(0.03125;16)-1*0.03125*log(0.03125;16)-1*0.03125*log(0.03125;16)-1*0.0625*log(0.0625;16)-1*0.0625*log(0.0625;16)
+Result: = 0.9666823241680437
+
+Instance: 3
+Total number of assignment = 4
+Number of unique label assignments: 12
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  2:numara  %:17.647058823529413
+Final label:: 2:numara 
+14:taraf: %5.88235294117647
+8:konu : %5.88235294117647
+2:numara : %17.647058823529413
+6:bilgi : %5.88235294117647
+16:paket: %5.88235294117647
+12:borç : %11.76470588235294
+3:hat : %11.76470588235294
+11:hat : %5.88235294117647
+15:borç : %11.76470588235294
+7:telefon: %5.88235294117647
+13:fatura : %5.88235294117647
+4:iþlem: %5.88235294117647
+Entropy: 
+-1*0.0588235294117647*log(0.0588235294117647;12)-1*0.0588235294117647*log(0.0588235294117647;12)-1*0.17647058823529413*log(0.17647058823529413;12)-1*0.0588235294117647*log(0.0588235294117647;12)-1*0.0588235294117647*log(0.0588235294117647;12)-1*0.1176470588235294*log(0.1176470588235294;12)-1*0.1176470588235294*log(0.1176470588235294;12)-1*0.0588235294117647*log(0.0588235294117647;12)-1*0.1176470588235294*log(0.1176470588235294;12)-1*0.0588235294117647*log(0.0588235294117647;12)-1*0.0588235294117647*log(0.0588235294117647;12)-1*0.0588235294117647*log(0.0588235294117647;12)
+Result: = 0.9636983369426121
+
+Instance: 4
+Total number of assignment = 4
+Number of unique label assignments: 9
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  6:bilgi  %:18.75
+Final label:: 6:bilgi 
+15:borç : %12.5
+8:konu : %12.5
+6:bilgi : %18.75
+16:paket: %12.5
+3:hat : %12.5
+7:telefon: %12.5
+2:numara : %6.25
+1:bayi : %6.25
+5:müþteri: %6.25
+Entropy: 
+-1*0.125*log(0.125;9)-1*0.125*log(0.125;9)-1*0.1875*log(0.1875;9)-1*0.125*log(0.125;9)-1*0.125*log(0.125;9)-1*0.125*log(0.125;9)-1*0.0625*log(0.0625;9)-1*0.0625*log(0.0625;9)-1*0.0625*log(0.0625;9)
+Result: = 0.9709439591518344
+
+Instance: 5
+Total number of assignment = 4
+Number of unique label assignments: 14
+Number of unique users:3
+List class labels and percentages: 
+Max frequency label:  7:telefon %:13.043478260869565
+Final label:: 7:telefon
+1:bayi : %8.695652173913043
+4:iþlem: %8.695652173913043
+6:bilgi : %8.695652173913043
+7:telefon: %13.043478260869565
+15:borç : %4.3478260869565215
+2:numara : %8.695652173913043
+10:cihaz: %13.043478260869565
+5:müþteri: %4.3478260869565215
+12:borç : %4.3478260869565215
+3:hat : %4.3478260869565215
+13:fatura : %8.695652173913043
+16:paket: %4.3478260869565215
+9:firma : %4.3478260869565215
+11:hat : %4.3478260869565215
+Entropy: 
+-1*0.08695652173913043*log(0.08695652173913043;14)-1*0.08695652173913043*log(0.08695652173913043;14)-1*0.08695652173913043*log(0.08695652173913043;14)-1*0.13043478260869565*log(0.13043478260869565;14)-1*0.043478260869565216*log(0.043478260869565216;14)-1*0.08695652173913043*log(0.08695652173913043;14)-1*0.13043478260869565*log(0.13043478260869565;14)-1*0.043478260869565216*log(0.043478260869565216;14)-1*0.043478260869565216*log(0.043478260869565216;14)-1*0.043478260869565216*log(0.043478260869565216;14)-1*0.08695652173913043*log(0.08695652173913043;14)-1*0.043478260869565216*log(0.043478260869565216;14)-1*0.043478260869565216*log(0.043478260869565216;14)-1*0.043478260869565216*log(0.043478260869565216;14)
+Result: = 0.965318690836976
+
+*************** User Metrics ***************
+
+User: 1
+Number of datasets assigned: 2
+List of all datasets with their completeness percentage: Sentiment Dataset: %100.0	Multilabel Topic Classification Dataset: %100.0	
+Total number of instances labeled: 34
+Total number of unique instances labeled: 15
+Consistency percentage of user 1: %55.88235294117647
+Average time spent in labeling an instance in seconds: 0.0671176474322291
+Std. dev. of  time spent in labeling an instance in second: 0.004644824521267243
+
+
+User: 2
+Number of datasets assigned: 2
+List of all datasets with their completeness percentage: Sentiment Dataset: %100.0	Multilabel Topic Classification Dataset: %100.0	
+Total number of instances labeled: 36
+Total number of unique instances labeled: 15
+Consistency percentage of user 2: %58.333333333333336
+Average time spent in labeling an instance in seconds: 0.06866666736702125
+Std. dev. of  time spent in labeling an instance in second: 0.0048705468571411245
+
+
+User: 3
+Number of datasets assigned: 1
+List of all datasets with their completeness percentage: Sentiment Dataset: %0.0	Multilabel Topic Classification Dataset: %0.0	
+Total number of instances labeled: 0
+Total number of unique instances labeled: 0
+Consistency percentage of user 3: %0.0
+Average time spent in labeling an instance in seconds: 0
+Std. dev. of  time spent in labeling an instance in second: NaN
+
+
+User: 4
+Number of datasets assigned: 1
+List of all datasets with their completeness percentage: Sentiment Dataset: %100.0	Multilabel Topic Classification Dataset: %0.0	
+Total number of instances labeled: 26
+Total number of unique instances labeled: 10
+Consistency percentage of user 4: %61.53846153846154
+Average time spent in labeling an instance in seconds: 0.06911538498332867
+Std. dev. of  time spent in labeling an instance in second: 0.003925527264442256
+
+
+User: 5
+Number of datasets assigned: 1
+List of all datasets with their completeness percentage: Sentiment Dataset: %0.0	Multilabel Topic Classification Dataset: %100.0	
+Total number of instances labeled: 7
+Total number of unique instances labeled: 5
+Consistency percentage of user 5: %28.57142857142857
+Average time spent in labeling an instance in seconds: 0.06628571450710297
+Std. dev. of  time spent in labeling an instance in second: 0.0018294642845982612
+
+
+User: 6
+Number of datasets assigned: 0
+List of all datasets with their completeness percentage: Sentiment Dataset: %0.0	Multilabel Topic Classification Dataset: %0.0	
+Total number of instances labeled: 0
+Total number of unique instances labeled: 0
+Consistency percentage of user 6: %0.0
+Average time spent in labeling an instance in seconds: 0
+Std. dev. of  time spent in labeling an instance in second: NaN
+
