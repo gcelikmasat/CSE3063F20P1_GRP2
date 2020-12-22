@@ -1,0 +1,59 @@
+{
+	"CurrentDatasetId" : 1,
+	"ConsistencyCheckProbability": 0.1,
+	"users": [
+		{
+			"user id": 1,
+			"user name": "RandomLabelingMechanism1",
+			"user type": "RandomBot"
+		},
+		{
+			"user id": 2,
+			"user name": "RandomLabelingMechanism2",
+			"user type": "RandomBot"
+		},
+		{
+			"user id": 3,
+			"user name": "MachineLearningLabelingMechanism3",
+			"user type": "MachineLearningBot"
+		},
+		{
+			"user id": 4,
+			"user name": "RandomLabelingMechanism4",
+			"user type": "RandomBot"
+		},
+		{
+			"user id": 5,
+			"user name": "RandomLabelingMechanism5",
+			"user type": "RandomBot"
+		},
+		{
+			"user id": 6,
+			"user name": "MachineLearningLabelingMechanism6",
+			"user type": "MachineLearningBot"
+		}
+	],
+	"datasets": [
+		{
+			"dataset id": 1,
+			"dataset name": "Sentiment Dataset",
+			"UsersForLabelingTheDataset": [1,2,4],
+			"path": "C:\\Users\\lenovo\\eclipse-workspace\\DataLabelSystem\\input.json"
+			
+		},
+		{
+			"dataset id": 2,
+			"dataset name": "Multilabel Topic Classification Dataset",
+			"UsersForLabelingTheDataset": [1,2,3,5],
+			"path": "C:\\Users\\lenovo\\eclipse-workspace\\DataLabelSystem\\input2.json"
+		},
+		{
+			"dataset id": 3,
+			"dataset name": "Nonsense Dataset",
+			"UsersForLabelingTheDataset": [1,2,3,4,5,6],
+			"path": "C:\\Users\\lenovo\\eclipse-workspace\\DataLabelSystem\\input3.json"
+		}
+	]
+	
+	
+}
