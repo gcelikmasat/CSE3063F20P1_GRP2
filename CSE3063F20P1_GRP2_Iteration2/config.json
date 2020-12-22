@@ -46,13 +46,8 @@
 			"dataset name": "Multilabel Topic Classification Dataset",
 			"UsersForLabelingTheDataset": [1,2,3,5],
 			"path": "C:\\Users\\lenovo\\eclipse-workspace\\DataLabelSystem\\input2.json"
-		},
-		{
-			"dataset id": 3,
-			"dataset name": "Nonsense Dataset",
-			"UsersForLabelingTheDataset": [1,2,3,4,5,6],
-			"path": "C:\\Users\\lenovo\\eclipse-workspace\\DataLabelSystem\\input3.json"
 		}
+		
 	]
 	
 	
