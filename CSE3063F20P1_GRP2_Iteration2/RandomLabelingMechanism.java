@@ -50,9 +50,8 @@ public class RandomLabelingMechanism extends User implements Serializable {
 		for (int x = 0; x < times; x++) {
 
 			int random = (int) (Math.random() * clone.size());
-			la.getClassLabel().add(clone.get(random)); // tek label iþlem
-
-			temp.getClassLabel().add(clone.get(random)); // o datasetin o insatcnce için olan her label
+			la.getClassLabel().add(clone.get(random));
+			temp.getClassLabel().add(clone.get(random)); 
 			data.getInstances().get(index).getClassLabel().add(clone.get(random));
 			clone.remove(random);
 
@@ -77,6 +76,7 @@ public class RandomLabelingMechanism extends User implements Serializable {
 		Instance b = new Instance();
 
 		int rand = (int) (Math.random() * 100);
+		// Choose an instance which is labeled before with consistency check probability
 		if (rand < getConsistencyCheckProbability() * 100 && (super.getInstances().size() != 0)) {
 
 			int randomInstance = (int) ((Math.random() * (super.getInstances().size())));
