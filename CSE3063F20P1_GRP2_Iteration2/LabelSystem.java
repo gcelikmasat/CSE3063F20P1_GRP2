@@ -99,7 +99,8 @@ public class LabelSystem implements Serializable {
 			File file_exist = new File(objectFileName);
 			boolean cond1 = file_exist.exists();
 
-			if (cond1 == true) {
+			// Read the objects that are kept in the file
+			if (cond1) {
 				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(objectFileName));
 				try {
 					data_list = (ArrayList<Dataset>) ois.readObject();
@@ -112,6 +113,7 @@ public class LabelSystem implements Serializable {
 
 			}
 
+			// Find current dataset
 			Dataset data = new Dataset();
 			for (int i = 0; i < data_list.size(); i++) {
 				if (data_list.get(i).getId() == current) {
@@ -119,6 +121,7 @@ public class LabelSystem implements Serializable {
 				}
 			}
 
+			// Find the maximum number for labeling assignment
 			int complete_count = 0;
 			for (int i = 0; i < data.getUsers().size(); i++) {
 				if (data.getUsers().get(i) instanceof RandomLabelingMechanism) {
@@ -128,15 +131,16 @@ public class LabelSystem implements Serializable {
 			complete_count *= data.getInstances().size();
 
 			if (user_list.size() != 0) {
-				// try {
+				
 				int completed = 0;
-				// completed!=complete_count
+		
 				while (completed != complete_count) {
 					completed = 0;
 
 					for (int x = 0; x < data.getInstances().size(); x++) {
 						completed += data.getInstances().get(x).uniqueUsers(data.getAssignments());
 					}
+					// End of the labeling operation
 					if (completed == complete_count) {
 						break;
 					}
@@ -150,14 +154,18 @@ public class LabelSystem implements Serializable {
 							}
 							LabelAssignment la = new LabelAssignment(data.getUsers().get(j));
 
+							// User labels an instance
 							data.getUsers().get(j).label(la, data);
+							
 							if (!la.getClassLabel().isEmpty()) {
 								data.getAssignments().add(la);
 							}
 
+							// output .json
 							WriteJsonFile a = new WriteJsonFile(data_list, user_list);
 							a.printToFile("output_test");
 
+							// metrics output
 							File file = new File("metrics.txt");
 							// Instantiating the PrintStream class
 							PrintStream stream = new PrintStream(file);
@@ -185,6 +193,7 @@ public class LabelSystem implements Serializable {
 								user_list.get(m).userMetrics(data_list, data);
 								System.out.println();
 							}
+							// Save the objects in file
 							File file2 = new File(objectFileName);
 							ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file2));
 							objectOutputStream.writeObject(data_list);
