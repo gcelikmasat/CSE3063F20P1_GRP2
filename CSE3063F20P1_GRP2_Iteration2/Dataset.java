@@ -91,6 +91,22 @@ public class Dataset implements Serializable {
 	public void setAssignments(ArrayList<LabelAssignment> assignments) {
 		this.assignments = assignments;
 	}
+	
+	public ArrayList<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(ArrayList<User> users) {
+		this.users = users;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
 
 	// prints labels
 	public void printLabels() {
@@ -164,28 +180,13 @@ public class Dataset implements Serializable {
 
 	}
 
-	public ArrayList<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(ArrayList<User> users) {
-		this.users = users;
-	}
-
-	public String getPath() {
-		return path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-	}
-
 	@Override
 	public String toString() {
 		return "Dataset [id=" + id + ", name=" + name + ", maxNoLabels=" + maxNoLabels + ", \nlabels=" + labels
 				+ ", \ninstances=" + instances + ",\n users=" + users + ", path=" + path + "]\n";
 	}
 
+	// Finds how many times an instance labeled
 	public int findLabelledInstances() {
 		int total = 0;
 		for (int j = 0; j < getInstances().size(); ++j) {
@@ -196,19 +197,21 @@ public class Dataset implements Serializable {
 		return total;
 	}
 
+	// Find the number of unique instances
 	public ArrayList<Integer> uniqueInstancesOfLabels(Label lab) {
 
 		ArrayList<Integer> index = new ArrayList<>();
-		// for (int i = 0; i < getLabels().size(); ++i) {
+		
 		for (int j = 0; j < getInstances().size(); ++j) {
 			if (instances.get(j).getClassLabel().contains(lab))
 				if (!index.contains(instances.get(j).getId()))
 					index.add(instances.get(j).getId());
 		}
-		// }
+		
 		return index;
 	}
 
+	// Find the class distribution based on final instance labels
 	public void classDistribution() {
 
 		Integer[] numbers = new Integer[this.getLabels().size()];
@@ -236,6 +239,7 @@ public class Dataset implements Serializable {
 
 	}
 
+	// Find the percentage of the labeled instances
 	public double datasetpercentage() {
 		// 1.
 		double howManyLabelled = 0;
@@ -248,43 +252,33 @@ public class Dataset implements Serializable {
 		return percentage;
 	}
 
-	/*
-	 * C- Dataset Performance Metrics 1- Completeness percentage (e.g. what
-	 * percentage of the instances are labeled) 2- Class distribution based on final
-	 * instance labels (e.g. 70% positive, 30% negative ) 3- List number of unique
-	 * instances for each class label () 4- Number of users assigned to this dataset
-	 * 5- List of users assigned and their completeness percentage (e.g. (user 1,
-	 * 99%), (user2, %80), and (user3,30%), meaning user 3 has labeled 30% of the
-	 * unique instances in this dataset ) 6- List of users assigned and their
-	 * consistency percentage (e.g. (user 1, 99%), (user2, %89), and (user3,70%),
-	 * please see A.5 for consistency calculation)
-	 */
-
+	// C- Dataset Performance Metrics
 	public void datasetMetrics() {
 
-		// 1.
+		// 1. Completeness percentage (e.g. what percentage of the instances are labeled)
 		System.out.println("Percentage of the instances are labeled in dataset " + id + " : %" + datasetpercentage());
 
-		// 2.
+		// 2. Class distribution based on final instance labels (e.g. 70% positive, 30% negative )
 		System.out.println("Class distribution based on final instance labels: ");
 		classDistribution();
 
-		// 3.
+		//  3. List number of unique instances for each class label ()
 		System.out.println("List number of unique instances for each class label: ");
 		for (int i = 0; i < labels.size(); ++i) {
 			ArrayList<Integer> index = uniqueInstancesOfLabels(labels.get(i));
 			System.out.println(labels.get(i).getId() + ": " + labels.get(i).getText() + ": " + index);
 		}
-		// 4.
+		// 4. Number of users assigned to this dataset
 		System.out.println("Number of users assigned: " + getUsers().size());
 
-		// 5.
+		// 5. List of users assigned and their completeness percentage (e.g. (user 1, 99%), (user2, %80), 
+		// and (user3,30%), meaning user 3 has labeled 30% of the unique instances in this dataset )
 		for (int i = 0; i < users.size(); ++i) {
 			System.out.println("completeness percentage of user " + users.get(i).getId() + ": %"
 					+ users.get(i).completenessDataset(this));
 		}
 		System.out.println();
-		// 6.
+		// 6. List of users assigned and their consistency percentage (e.g. (user 1, 99%), (user2, %89), and (user3,70%)
 		for (int i = 0; i < users.size(); ++i) {
 			System.out.println("consistency percentage of user " + users.get(i).getId() + ": %"
 					+ users.get(i).consistencyPercentage(this));
