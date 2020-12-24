@@ -1,3 +1,10 @@
+/*
+* Instance.java
+* This class keeps the neccessary informations about an instance.
+*
+*/
+
+
 package CSE3063F20P1_GRP2;
 
 import java.io.Serializable;
@@ -66,6 +73,7 @@ public class Instance implements Serializable {
 		this.uniqueLabel = uniqueLabel;
 	}
 
+	// Finds the unique labels
 	public void setUniqueLabelAssignments(Dataset data) {
 
 		for (int x = 0; x < classLabel.size(); x++) {
@@ -74,6 +82,7 @@ public class Instance implements Serializable {
 		}
 	}
 
+	// Find the total number of assignments for an instance
 	public int totalAssignments(ArrayList<LabelAssignment> labelAssignment) {
 
 		int count = 0;
@@ -84,6 +93,7 @@ public class Instance implements Serializable {
 		return count;
 	}
 
+	// Finds the unique users
 	public int uniqueUsers(ArrayList<LabelAssignment> labelAssignment) {
 
 		ArrayList<Integer> index = new ArrayList<Integer>();
@@ -98,6 +108,7 @@ public class Instance implements Serializable {
 		return index.size();
 	}
 
+	// Finds the class labels and percentages
 	public void classlabelsPercentages() {
 
 		int count = 0;
@@ -114,6 +125,7 @@ public class Instance implements Serializable {
 		}
 	}
 
+	// B- Instance Performance Metrics
 	public void instanceMetrics(Dataset data, ArrayList<LabelAssignment> labelAssignment) {
 
 		setUniqueLabelAssignments(data);
@@ -121,13 +133,13 @@ public class Instance implements Serializable {
 		System.out.println("Instance: " + getId());
 		System.out.println("Total number of assignment = " + totalAssignments(labelAssignment));
 
-		// 2.
+		// 2. Number of unique label assignments 
 		System.out.println("Number of unique label assignments: " + uniqueLabel.size());
 
-		// 3.
+		// 3. Number of unique users
 		System.out.println("Number of unique users:" + uniqueUsers(labelAssignment));
 
-		// 4.
+		// 4. Most frequent class label and percentage
 		System.out.println("List class labels and percentages: ");
 		classlabelsPercentages();
 
@@ -156,12 +168,12 @@ public class Instance implements Serializable {
 		System.out.println("Max frequency label:  " + max.getId() + ":" + max.getText() + " %:" + max.getFreq());
 		System.out.println("Final label:: " + this.finalLabel);
 
-		// 5,
+		// 5. List class labels and percentages
 		for (int i = 0; i < uniqueLabel.size(); ++i) {
 			System.out.println(uniqueLabel.get(i).getId() + ":" + uniqueLabel.get(i).printFreq());
 		}
 
-		// 6,
+		// 6. Entropy (e.g. for labeling assignments
 		double result = 0;
 		int base = uniqueLabel.size();
 
