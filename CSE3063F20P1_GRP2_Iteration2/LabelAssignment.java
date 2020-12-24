@@ -1,3 +1,9 @@
+/*
+ * LabelAssignment.java 
+ * This class keeps the information for labelling.
+ * 
+ */
+
 package CSE3063F20P1_GRP2;
 
 import java.util.Date;
