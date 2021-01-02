@@ -101,10 +101,13 @@ public class Instance implements Serializable {
 		for (int x = 0; x < labelAssignment.size(); x++) {
 
 			if (labelAssignment.get(x).getInstance().getId() == this.getId()) {
-				if (!index.contains(labelAssignment.get(x).getUser().getId()))
-					index.add(labelAssignment.get(x).getUser().getId());
+				if (!index.contains(labelAssignment.get(x).getUser().getId())) {
+					if(!(labelAssignment.get(x).getUser() instanceof  Human))
+						index.add(labelAssignment.get(x).getUser().getId());
+				}
+					
 			}
-		}
+			}
 
 		return index.size();
 	}
