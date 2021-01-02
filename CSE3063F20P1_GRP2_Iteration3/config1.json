@@ -1,0 +1,71 @@
+{
+	"CurrentDatasetId" :1,
+	"ConsistencyCheckProbability": 0.1,
+	"Bot Users": [
+		{
+			"user id": 1,
+			"user name": "RandomLabelingMechanism1",
+			"user type": "RandomBot"
+		},
+		{
+			"user id": 2,
+			"user name": "RandomLabelingMechanism2",
+			"user type": "RandomBot"
+		},
+		{
+			"user id": 3,
+			"user name": "MachineLearningLabelingMechanism3",
+			"user type": "MachineLearningBot"
+		},
+		{
+			"user id": 4,
+			"user name": "RandomLabelingMechanism4",
+			"user type": "RandomBot"
+		},
+		{
+			"user id": 5,
+			"user name": "RandomLabelingMechanism5",
+			"user type": "RandomBot"
+		},
+		{
+			"user id": 6,
+			"user name": "MachineLearningLabelingMechanism6",
+			"user type": "MachineLearningBot"
+		}
+		
+	],
+	"Human Users": [
+		{
+			"user type": "Human",
+			"user id": 7,
+			"user name": "Leyla",
+			"password": "123",
+			"ConsistencyCheckProbability": 0.1
+		},
+		{
+			"user type": "Human",
+			"user id": 8,
+			"user name": "Mecnun",
+			"password": "456",
+			"ConsistencyCheckProbability": 0.2
+		}
+		
+	],
+	"datasets": [
+		{
+			"dataset id": 1,
+			"dataset name": "Sentiment Dataset",
+			"UsersForLabelingTheDataset": [1,2,3,4,6,8],
+			"path": "input.json"
+			
+		},
+		{
+			"dataset id": 2,
+			"dataset name": "Multilabel Topic Classification Dataset",
+			"UsersForLabelingTheDataset": [1,2,5,7,8],
+			"path": "input2.json"
+		}
+	]
+	
+	
+}
