@@ -1,0 +1,12 @@
+﻿Object Oriented Java
+"Which of the following is a technique for hiding the internal implementation details of an object?","Encapsulation"
+"In Java primitive data types ...","are synonyms for classes"
+"Which of the following statements about compositions (composite aggregations) are true?","When the composite element is deleted, the parts also die level."
+"Association classes are used to ...","Encapsulate association specific attributes and operations"
+"How do you model the following situation with a UML class diagram: A season worker may be employed in one or several
+ seasons the beginning and the end of each employment period is saved","association class"
+"Which of the following differences between class diagrams and object diagrams are true?","Class diagrams describe a system on type level, object diagrams on instance level.", "Class diagrams describe the structure of a system. object diagrams describe the shape of a system at a certain point in time."
+"An aggregation is a special ...","association"
+"What is a synonym for strong aggregation?","composition"
+"A class diagram shows ... view of a system.","static"
+"How do you model the following situation: A doctor treats multiple patients a patient can be treated by  multiple doctors. Info of which doctor has treated which patient (can be multiple times) the date and diagnosis are stored.", "Doctor---Treatment---Patient (treatment info stored in Patient)"
