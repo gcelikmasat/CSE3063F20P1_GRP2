@@ -1,5 +1,5 @@
 ## a poll contains number of questions and a answerkey to those question.
-## this class is used for poll statistic for each studenton on a specific day.
+## this class is used for poll statistic for each student on a specific day.
 
 import logging
 
