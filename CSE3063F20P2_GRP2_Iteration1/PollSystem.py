@@ -41,9 +41,9 @@ class PollSystem():
 
         # For each student match their answers with correct answers
         for student in students:
-            student.toString()
             student.setCorrectAnswer()
-
+            student.toString()
+            
         # Create write Output object
         write = WriteOutput(students, usedPolls)
         # Write output of each students result for each Poll
