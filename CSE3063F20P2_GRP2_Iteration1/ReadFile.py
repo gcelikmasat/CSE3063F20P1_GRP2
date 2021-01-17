@@ -73,7 +73,7 @@ class ReadFile:
                     student.trace()
                     # Keep the students
                     self.students.append(student)
-        return self.students;
+        return self.students
 
 
     # Read the report file
