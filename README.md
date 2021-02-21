@@ -1,5 +1,6 @@
 # CSE3063F20P1_GRP2
-CSE3063 JAVA Project
+# CSE3063F20P2_GRP2
+CSE3063 JAVA and Python Projects
 
 Group 2
 - 150118013 - Gökberk Çelikmasat
